@@ -168,7 +168,7 @@ var AV_W='<svg class="av sm" viewBox="0 0 44 44"><path d="M8 26c0-10 6-17 14-17s
 var NS=document.getElementById('wake').namespaceURI, tip=document.getElementById('tip');
 function draw(id, D, verb){
   var svg=document.getElementById(id); svg.innerHTML='';
-  var W=Math.round(Math.max(300,Math.min(900,svg.parentNode.clientWidth-2))), sp=W<560, H=sp?360:330, m={l:sp?32:40,r:4,t:50,b:30};
+  var W=Math.round(Math.max(300,Math.min(900,svg.parentNode.clientWidth-2))), sp=W<560, H=sp?360:330, m={l:sp?32:40,r:4,t:sp?16:30,b:30};
   svg.setAttribute('viewBox','0 0 '+W+' '+H);
   var iw=W-m.l-m.r, ih=H-m.t-m.b, YMAX=25;
   function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
