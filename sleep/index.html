@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#8b5cf6">
+<meta name="robots" content="noindex,nofollow">
+<title>东京人几点起床・几点睡</title>
+<style>
+  :root{--bg:#f5f6f8;--card:#fff;--ink:#1f2733;--sub:#6b7585;--line:#e7eaef;
+    --c:#8b5cf6;--cs:#f1ecfe;--us:#f97316;--uss:#fff1e6;--ref:#6b7585;--grid:#eef0f3}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:22px 24px 60px}
+  h1{font-size:26px;margin:4px 0 4px;letter-spacing:.04em}
+  .lead{color:var(--sub);font-size:13.5px;margin:0 0 18px}
+  section{background:var(--card);border-radius:20px;padding:20px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 18px 40px -30px rgba(139,92,246,.45)}
+  section h2{font-size:18px;font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+  .hi{flex:none;width:32px;height:32px;border-radius:10px;background:var(--cs);display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+
+  .sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .card{border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+  .card .k{font-size:12.5px;color:var(--sub);font-weight:600}
+  .card .v{font-size:24px;font-weight:700;margin:2px 0 4px;font-variant-numeric:tabular-nums}
+  .card .v small{font-size:14px;color:var(--sub);font-weight:600;margin-left:6px}
+  .card .d{font-size:13.5px}
+  .card.us{background:var(--uss);border-color:#fed7aa}
+  .card.us .v{color:#c2410c}
+  .tag{display:inline-block;font-size:12px;font-weight:700;border-radius:99px;padding:1px 9px;margin-right:4px;background:var(--uss);color:#c2410c}
+
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--sub);margin-bottom:6px}
+  .legend i{display:inline-block;vertical-align:middle;margin-right:6px}
+  .sw{width:12px;height:12px;border-radius:3px}
+  .sw-ref{width:14px;height:0;border-top:2px dashed var(--ref)}
+  svg.ch{display:block;width:100%;height:auto;overflow:visible}
+  .axis text{fill:#8c95a3;font-size:11px}
+  .hint{font-size:12.5px;color:var(--sub);margin:6px 0 0}
+  .tip{position:fixed;pointer-events:none;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;
+    padding:8px 11px;font-size:13px;box-shadow:0 10px 24px rgba(31,39,51,.14);opacity:0;transition:opacity .1s;white-space:nowrap;z-index:99}
+
+  details{margin-top:10px}
+  details summary{cursor:pointer;color:var(--sub);font-size:13.5px}
+  table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:6px}
+  th,td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--sub);font-weight:600}
+  tr.us td{background:var(--uss);font-weight:700}
+  .note{font-size:13.5px;color:var(--sub)}
+  .note ul{margin:6px 0 0;padding-left:20px}.note li{margin-bottom:4px}
+  @media (max-width:720px){.wrap{padding:16px 16px 50px}section{padding:16px 14px}h1{font-size:22px}}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fga' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbbf24'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23fga)'/%3E%3Cpath d='M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z' fill='%23fb7185'/%3E%3C/svg%3E">
+<style>
+.fam-bar{background:rgba(255,255,255,.94);border-bottom:1px solid #e7eaef;position:relative;z-index:60}
+.fam-in{max-width:1300px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:36px;min-height:64px}
+.fam-brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#f97316;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-brand svg{display:block;width:32px;height:32px;flex:none}
+.fam-nav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.fam-nav::-webkit-scrollbar{display:none}
+.fam-nav a{display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-nav a.she{background:#fde7f1;color:#e11d74}.fam-nav a.she:hover,.fam-nav a.she.on{background:#e11d74;color:#fff}
+.fam-nav a.he{background:#eceafd;color:#4f46e5}.fam-nav a.he:hover,.fam-nav a.he.on{background:#4f46e5;color:#fff}
+.fam-nav a.talk{background:#e3f6ee;color:#10b981}.fam-nav a.talk:hover,.fam-nav a.talk.on{background:#10b981;color:#fff}
+.fam-nav a.trip{background:#e0f2fe;color:#0284c7}.fam-nav a.trip:hover,.fam-nav a.trip.on{background:#0ea5e9;color:#fff}
+.fam-bc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-bc a{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:99px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05);color:#6b7585;font-size:12.5px;font-weight:600;text-decoration:none}
+.fam-bc a.cur{background:var(--bcs);color:var(--bc);box-shadow:none}
+.fam-bc .sep{color:#c3c8d0;font-size:14px}
+.fam-nav a svg{width:22px;height:22px;margin-right:4px;flex:none}.fam-bc a svg{width:18px;height:18px;margin-right:4px;flex:none}
+.fam-bc + h1{margin-top:0!important}
+@media (max-width:720px){.fam-in{gap:14px;padding:0 16px}}
+@media (max-width:420px){.fam-brand span{display:none}.fam-nav a{padding:0 11px}}
+</style>
+</head>
+<body>
+<div class="fam-bar"><div class="fam-in"><a class="fam-brand" href="../"><svg viewBox="0 0 32 32"><defs><linearGradient id="fga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#fga)"/><path d="M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z" fill="#fff"/><path d="M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z" fill="#fb7185"/></svg><span>美好家园</span></a><nav class="fam-nav"><a class="she" href="../wife/"><svg viewBox="0 0 44 44"><path d="M8 26c0-10 6-17 14-17s14 7 14 17v12H8Z" fill="#1f1a17"/><circle cx="22" cy="23" r="11" fill="#fbe0c8"/><path d="M11 21c1-7 6-11 11-11s10 4 11 11c-4-1-8-4-10-7-2 4-7 6-12 7Z" fill="#1f1a17"/><circle cx="18" cy="24" r="1.3" fill="#3b2a20"/><circle cx="26" cy="24" r="1.3" fill="#3b2a20"/><ellipse cx="15.5" cy="27.5" rx="2" ry="1.2" fill="#f9a8c0" opacity=".8"/><ellipse cx="28.5" cy="27.5" rx="2" ry="1.2" fill="#f9a8c0" opacity=".8"/><path d="M19.5 28.5q2.5 2.2 5 0" stroke="#c2410c" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>老婆</a><a class="he" href="../husband/"><svg viewBox="0 0 44 44"><circle cx="22" cy="24" r="11.5" fill="#fbe0c8"/><path d="M10.5 22c0-8 5-12.5 11.5-12.5S33.5 14 33.5 22c-2-3-5-5-8-5.5-3 2-9 3.5-15 5.5Z" fill="#1f1a17"/><circle cx="18" cy="25" r="1.3" fill="#3b2a20"/><circle cx="26" cy="25" r="1.3" fill="#3b2a20"/><path d="M15.5 21.5h4M24.5 21.5h4" stroke="#1f1a17" stroke-width="1.3" stroke-linecap="round"/><path d="M19.5 29q2.5 2.2 5 0" stroke="#c2410c" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>老公</a><a class="talk" href="../talk/">🕊 沟通</a><a class="trip" href="../trip/">🚃 出行</a></nav></div></div>
+<main class="wrap">
+  <nav class="fam-bc" style="--bc:#8b5cf6;--bcs:#f1ecfe"><a href="../">🏡 美好家园</a><span class="sep">›</span><a class="cur" href="#">🕰 东京人的作息</a></nav>
+<h1>东京人几点起床・几点睡</h1>
+  <p class="lead">东京圈・平日的作息分布，和我们家（8 点过起床・11 点睡）比一比</p>
+
+  <section>
+    <h2><span class="hi">📝</span>总结</h2>
+    <div class="sum">
+      <div class="card">
+        <div class="k">☀️ 东京圈 起床</div>
+        <div class="v">6:15〜6:20<small>过半数已起床</small></div>
+        <div class="d">最多的是 5:31〜6:00（17.9%）。8:00 前 9 成的人已经起来了</div>
+      </div>
+      <div class="card">
+        <div class="k">🌙 东京圈 睡觉</div>
+        <div class="v">23:15〜23:30<small>过半数已睡着</small></div>
+        <div class="d">集中在 22:00〜0:30。23:00 前睡的约 3 成</div>
+      </div>
+      <div class="card us">
+        <div class="k">🏡 我们家</div>
+        <div class="v">23:00 → 8:00 过<small>约 9 小时</small></div>
+        <div class="d"><span class="tag">睡觉</span>比东京一半人早一点（中间偏早）<br><span class="tag">起床</span>比东京约 9 成的人晚<br><span class="tag">睡眠</span>东京按中位数推算约 7 小时，我们多 2 小时左右</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="hi">☀️</span>几点起床</h2>
+    <div class="legend"><span><i class="sw" style="background:var(--c)"></i>东京圈</span><span><i class="sw-ref"></i>全国（参考）</span><span><i class="sw" style="background:var(--us)"></i>我们家所在的时段</span></div>
+    <svg class="ch" id="wake" viewBox="0 0 800 330" role="img" aria-label="东京圈平日起床时间分布"></svg>
+    <p class="hint">每根柱子 = 在这 30 分钟里起床的人占全体的 %。刻度写的是这一档的结束时刻（「6:00」= 5:31〜6:00）</p>
+    <details><summary>数据表</summary><table id="wake-t"></table></details>
+  </section>
+
+  <section>
+    <h2><span class="hi">🌙</span>几点睡觉</h2>
+    <div class="legend"><span><i class="sw" style="background:var(--c)"></i>东京圈</span><span><i class="sw-ref"></i>全国（参考）</span><span><i class="sw" style="background:var(--us)"></i>我们家所在的时段</span></div>
+    <svg class="ch" id="bed" viewBox="0 0 800 330" role="img" aria-label="东京圈平日就寝时间分布"></svg>
+    <p class="hint">每根柱子 = 在这 30 分钟里睡着的人占全体的 %。刻度写的是这一档的开始时刻（「23:00」= 23:00〜23:29）</p>
+    <details><summary>数据表</summary><table id="bed-t"></table></details>
+  </section>
+
+  <section class="note">
+    <h2><span class="hi">🔎</span>数据从哪来</h2>
+    <ul>
+      <li>NHK 放送文化研究所「国民生活時間調査 2025」（2025 年 10 月调查）。「東京圏」是 NHK 的地区分类。</li>
+      <li>原数据是每 15 分钟「在睡觉的人的比例」。相邻时刻的增减 = 这段时间睡着或醒来的人，是推算出来的分布，不是直接问的几点起床。</li>
+      <li>回答按 15 分钟刻度填，所以时间容易凑在整点和半点上。</li>
+      <li>0 点以后的就寝用的是「平日凌晨」的数据，和前一晚的数据接在一起算，0:00〜0:29 那一档可能偏高一点。</li>
+    </ul>
+  </section>
+</main>
+<div class="tip" id="tip"></div>
+<script>
+var WAKE = {
+  us: '8:30', usLabel: '我们家 8 点过',
+  rows: [
+    ['4:00','3:31〜4:00',0.7,0.6,7.1],['4:30','4:01〜4:30',3.9,2.6,11.0],['5:00','4:31〜5:00',6.9,7.8,17.9],
+    ['5:30','5:01〜5:30',9.6,11.1,27.5],['6:00','5:31〜6:00',17.9,19.8,45.4],['6:30','6:01〜6:30',14.9,17.8,60.3],
+    ['7:00','6:31〜7:00',15.9,16.2,76.2],['7:30','7:01〜7:30',8.4,7.5,84.6],['8:00','7:31〜8:00',6.0,4.2,90.6],
+    ['8:30','8:01〜8:30',1.4,1.3,92.0],['9:00','8:31〜9:00',2.8,1.7,94.8],['9:30','9:01〜9:30',0.7,0.4,95.5],['10:00','9:31〜10:00',0.8,0.7,96.3]
+  ],
+  cumName: '到这时 已起床（东京圈）'
+};
+var BED = {
+  us: '23:00', usLabel: '我们家 11 点',
+  rows: [
+    ['20:00','20:00〜20:29',0.8,0.8,2.1],['20:30','20:30〜20:59',1.3,1.2,3.4],['21:00','21:00〜21:29',5.4,5.6,8.8],
+    ['21:30','21:30〜21:59',4.5,5.7,13.3],['22:00','22:00〜22:29',9.9,12.0,23.2],['22:30','22:30〜22:59',8.4,10.2,31.6],
+    ['23:00','23:00〜23:29',17.1,18.0,48.7],['23:30','23:30〜23:59',12.6,12.9,61.3],['0:00','0:00〜0:29',20.4,15.9,81.7],
+    ['0:30','0:30〜0:59',3.3,2.7,85.0],['1:00','1:00〜1:29',4.9,3.2,89.9],['1:30','1:30〜1:59',2.1,2.5,92.0],['2:00','2:00〜2:29',1.8,1.8,93.8]
+  ],
+  cumName: '这一档结束时 已睡着（东京圈）'
+};
+
+var NS=document.getElementById('wake').namespaceURI, tip=document.getElementById('tip');
+function draw(id, D, verb){
+  var svg=document.getElementById(id), W=800,H=330,m={l:40,r:10,t:30,b:30}, iw=W-m.l-m.r, ih=H-m.t-m.b, YMAX=25;
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
+  function y(v){return m.t+ih-(v/YMAX)*ih}
+  var n=D.rows.length, band=iw/n, bw=band*0.62, mx=Math.max.apply(null,D.rows.map(function(r){return r[2]}));
+  var ax=el('g',{class:'axis'});
+  for(var v=0;v<=YMAX;v+=5){
+    el('line',{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:'var(--grid)','stroke-width':1},ax);
+    el('text',{x:m.l-8,y:y(v)+4,'text-anchor':'end'},ax).textContent=v+'%';
+  }
+  D.rows.forEach(function(r,i){
+    var cx=m.l+band*i+band/2, isUs=r[0]===D.us;
+    var t=el('text',{x:cx,y:H-m.b+18,'text-anchor':'middle'},ax); t.textContent=r[0];
+    if(isUs){t.setAttribute('fill','#c2410c');t.setAttribute('font-weight','700')}
+  });
+  D.rows.forEach(function(r,i){
+    var x0=m.l+band*i+(band-bw)/2, top=y(r[2]), h=y(0)-top, rr=Math.min(4,h), isUs=r[0]===D.us, col=isUs?'var(--us)':'var(--c)';
+    var g=el('g',{});
+    var bar=el('path',{d:'M'+x0+','+y(0)+' V'+(top+rr)+' Q'+x0+','+top+' '+(x0+rr)+','+top+' H'+(x0+bw-rr)+' Q'+(x0+bw)+','+top+' '+(x0+bw)+','+(top+rr)+' V'+y(0)+' Z',fill:col},g);
+    el('line',{x1:x0-3,x2:x0+bw+3,y1:y(r[3]),y2:y(r[3]),stroke:'var(--ref)','stroke-width':2,'stroke-dasharray':'4 3'},g);
+    if(isUs){
+      var ly=Math.min(top,y(r[3]))-10, cx=x0+bw/2;
+      el('line',{x1:cx,x2:cx,y1:ly-14,y2:Math.min(top,y(r[3]))-3,stroke:'var(--us)','stroke-width':2});
+      var tw=D.usLabel.length*13+16, bx=Math.max(m.l,Math.min(cx-tw/2,W-m.r-tw));
+      el('rect',{x:bx,y:ly-36,width:tw,height:24,rx:12,fill:'var(--us)'});
+      el('text',{x:bx+tw/2,y:ly-19.5,'text-anchor':'middle','font-size':12.5,'font-weight':700,fill:'#fff'}).textContent=D.usLabel;
+    }
+    if(r[2]===mx){el('text',{x:x0+bw/2,y:Math.min(top,y(r[3]))-6,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'var(--ink)'}).textContent=r[2]+'%'}
+    var hit=el('rect',{x:m.l+band*i,y:m.t,width:band,height:ih,fill:'transparent'},g);
+    hit.addEventListener('mousemove',function(e){
+      bar.setAttribute('opacity','.8');
+      tip.innerHTML='<b>'+r[1]+' '+verb+'</b>'+(isUs?' <span style="color:#c2410c">← 我们家</span>':'')+'<br>东京圈 '+r[2].toFixed(1)+'%　全国 '+r[3].toFixed(1)+'%<br><span style="color:var(--sub)">'+D.cumName+' '+r[4]+'%</span>';
+      tip.style.opacity=1;
+      tip.style.left=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8)+'px'; tip.style.top=(e.clientY-12)+'px';
+    });
+    hit.addEventListener('mouseleave',function(){bar.removeAttribute('opacity');tip.style.opacity=0});
+  });
+  el('line',{x1:m.l,x2:W-m.r,y1:y(0),y2:y(0),stroke:'#8c95a3','stroke-width':1});
+  var tb=document.getElementById(id+'-t');
+  tb.innerHTML='<tr><th>'+verb+'时间段</th><th>东京圈</th><th>全国</th><th>'+D.cumName+'</th></tr>'+D.rows.map(function(r){
+    return '<tr'+(r[0]===D.us?' class="us"':'')+'><td>'+r[1]+(r[0]===D.us?' 🏡':'')+'</td><td>'+r[2].toFixed(1)+'%</td><td>'+r[3].toFixed(1)+'%</td><td>'+r[4]+'%</td></tr>'}).join('');
+}
+draw('wake',WAKE,'起床');
+draw('bed',BED,'睡着');
+</script>
+<script>
+// 本地（file://）打开时，文件夹链接不会自动找 index.html，补上。GitHub Pages 上不变
+if(location.protocol==='file:'){[].forEach.call(document.querySelectorAll('a[href$="/"]'),function(a){a.setAttribute('href',a.getAttribute('href')+'index.html')})}
+</script>
+</body>
+</html>
