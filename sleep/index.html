@@ -251,7 +251,7 @@ function draw(id, D, verb){
   box.innerHTML=R.map(function(r){
     var av=r[0]==='us'?AV_W:r[0]==='he'?AV_H:'';
     return '<div class="r"><div class="nm">'+av+'<span>'+r[1]+'<small>'+r[2]+'</small></span></div><div class="tr"><div class="bar '+r[0]+'" style="width:'+(r[3]/MAX*100)+'%"></div><span class="v" style="right:'+(100-r[3]/MAX*100)+'%">'+r[4]+'</span></div></div>';
-  }).join('')+'<div class="ax"><div></div><div>'+[0,2,4,6,8,10].map(function(h){return '<span style="left:'+(h/MAX*100)+'%">'+(h===10?'10 小时':h)+'</span>'}).join('')+'</div></div>';
+  }).join('')+'<div class="ax"><div style="text-align:right">小时</div><div>'+[0,2,4,6,8,10].map(function(h){return '<span style="left:'+(h/MAX*100)+'%">'+h+'</span>'}).join('')+'</div></div>';
 })();
 function drawAll(){draw('wake',WAKE,'起床');draw('bed',BED,'睡着')}
 drawAll();
