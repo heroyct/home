@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#10b981">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>非暴力沟通 练习卡 · 美好家园</title>
+<style>
+:root{
+  --bg:#faf8f4; --card:#fff; --ink:#2c2825; --muted:#7a726b; --line:#e8e2d8;
+  --accent:#c96442; --ok:#6b9e5f; --ng:#c85450; --o:#4a8ba8; --f:#c96442; --n:#8a6bb0; --r:#6b9e5f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+.xpage{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans SC","Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.8;font-size:15px}
+.container{max-width:860px;margin:0 auto;padding:24px 16px 80px}
+header:not(.site){text-align:center;padding:24px 0 18px;border-bottom:1px solid var(--line);margin-bottom:20px}
+h1{font-size:25px;font-weight:400;letter-spacing:.05em}
+header:not(.site) .sub{color:var(--muted);font-size:13px;margin-top:8px}
+section{background:var(--card);border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);scroll-margin-top:12px}
+h2{font-size:18px;font-weight:500;margin-bottom:6px}
+h3{font-size:15px;font-weight:600;margin:14px 0 4px}
+.desc{color:var(--muted);font-size:12.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+p{margin:6px 0}
+ul,ol{margin:6px 0 6px 22px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:12.5px;white-space:nowrap}
+.step{display:inline-block;min-width:44px;text-align:center;font-size:12px;font-weight:600;color:#fff;border-radius:10px;padding:1px 8px;margin-right:6px}
+.o{background:var(--o)} .f{background:var(--f)} .n{background:var(--n)} .r{background:var(--r)}
+.card{background:linear-gradient(135deg,#e3f6ee 0%,#f2fbf7 100%);border-left:4px solid #10b981;--cs:#e3f6ee}  
+.formula{font-size:16px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
+.ng{color:var(--ng)} .ok{color:var(--ok)}
+.bad,.good{border-radius:8px;padding:9px 12px;margin:8px 0;font-size:14.5px}
+.bad{background:#fbefee;border:1px solid #f0d3d1}
+.good{background:#f0f6ee;border:1px solid #d5e6cf}
+.say{font-size:15.5px;background:#fafaf7;border:1px dashed var(--line);border-radius:8px;padding:10px 12px;margin:8px 0}
+.note{font-size:12.5px;color:var(--muted)}
+.tags span{display:inline-block;font-size:13px;padding:2px 9px;margin:3px 4px 3px 0;border-radius:12px;background:#f6f3ee}
+
+
+:root{--font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif;
+ --bg:#f5f6f8;--ink:#1f2733;--sub:#6b7585;--line:#e7eaef;--accent:#e0607e;--accent-soft:#fce6ec;--c:#e0607e;--cs:#fce6ec;--link:#f08a4b}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+.wrap a{color:var(--link)}
+header.site{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line)}
+header.site .xin{max-width:1300px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:36px;min-height:64px}
+header.site .brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#f08a4b;text-decoration:none;white-space:nowrap}
+header.site .brand svg{display:block;width:32px!important;min-width:0!important;height:32px!important;flex:none}  
+header.site .gnav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;position:static;background:none;border:0;padding:0;margin:0;flex-wrap:nowrap}
+header.site .gnav a{display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+header.site .gnav a.g-health{background:#e3f6ee;color:#10b981} header.site .gnav a.g-health:hover,header.site .gnav a.g-health.on{background:#10b981;color:#fff}
+header.site .gnav a.g-invest{background:#fdeadd;color:#f08a4b} header.site .gnav a.g-invest:hover,header.site .gnav a.g-invest.on{background:#f08a4b;color:#fff}
+header.site .gnav a.g-grow{background:#e5effe;color:#3b82f6} header.site .gnav a.g-grow:hover,header.site .gnav a.g-grow.on{background:#3b82f6;color:#fff}
+header.site .gnav a.g-work{background:#efe9fd;color:#8b5cf6} header.site .gnav a.g-work:hover,header.site .gnav a.g-work.on{background:#8b5cf6;color:#fff}
+header.site .gnav a.g-family{background:#fce6ec;color:#e0607e} header.site .gnav a.g-family:hover,header.site .gnav a.g-family.on{background:#e0607e;color:#fff}
+header.site .gnav a.g-fun{background:#fdf1d8;color:#f59e0b} header.site .gnav a.g-fun:hover,header.site .gnav a.g-fun.on{background:#f59e0b;color:#fff}
+.bc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px}
+.bc a{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:99px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05);color:var(--sub)!important;font-size:12.5px;font-weight:600;text-decoration:none}
+.bc a.cur{background:var(--cs);color:var(--c)!important;box-shadow:none}
+.bc a:hover{background:var(--c);color:#fff!important}
+.bc .sep{color:#c3c8d0;font-size:14px}
+.card,.qa,.nv{transition:transform .2s ease,box-shadow .2s ease}
+.card:hover,.qa:hover,.nv:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,39,51,.09)}
+@media (prefers-reduced-motion:reduce){.card:hover,.qa:hover,.nv:hover{transform:none}}
+@media (max-width:720px){header.site .xin{gap:14px;padding:0 16px}}
+@media (min-width:1181px){nav.side{top:80px!important;max-height:calc(100vh - 96px)!important}}  
+body{margin:0;padding:0}
+.xpage{background:none!important;color:var(--ink)!important;font-family:var(--font)!important}
+
+.layout{display:flex;gap:28px;max-width:1300px;margin:0 auto;align-items:flex-start;padding:28px 24px 90px}
+.sidenav{position:sticky;top:88px;flex:0 0 214px;width:214px;max-height:calc(100vh - 110px);overflow-y:auto;background:#fff;border-radius:14px;border-top:4px solid var(--c);padding:14px 10px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.sidenav .ttl{font-size:11.5px;letter-spacing:.06em;color:var(--sub);font-weight:700;margin:0 0 8px;padding-left:10px}
+.sidenav a{display:block;font-size:13px;line-height:1.45;color:var(--sub);text-decoration:none;padding:7px 10px;border-radius:9px;margin-bottom:1px}
+.sidenav a:hover{background:var(--cs);color:var(--c)}
+.sidenav a.on{background:var(--cs);color:var(--c);font-weight:700}
+.wrap{flex:1 1 auto;min-width:0;max-width:1000px}
+h1{font-size:26px;font-weight:700;margin:0 0 20px;line-height:1.35;text-align:left}h1+.lead{margin-top:-14px}
+.lead{color:var(--sub);font-size:13px;margin:0 0 18px}
+.hi{flex:none;width:32px;height:32px;border-radius:10px;background:var(--cs);display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+section{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.05);scroll-margin-top:84px}
+section h2{font-size:18px;font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media (max-width:900px){.layout{display:block;padding:18px 16px 70px}.sidenav{display:none}}
+@media (max-width:720px){section{padding:16px 14px}}
+
+.steps4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
+.st4{border:1px solid #e7eaef;border-top:4px solid var(--sc);border-radius:12px;padding:14px 16px;background:#fff}
+.st4 h3{margin:0 0 10px;font-size:15.5px;line-height:1.5;display:flex;align-items:flex-start;gap:8px}
+.st4 h3 .step{flex:none;margin:2px 0 0}
+.st4 p,.st4 ul{margin:0 0 10px;font-size:14px;line-height:1.75}
+.st4 ul{padding-left:1.3em}
+.st4 li{margin:2px 0}
+.st4 .bad,.st4 .good{margin:6px 0;padding:7px 11px;font-size:14px}
+.st-o{--sc:var(--o)}.st-f{--sc:var(--f)}.st-n{--sc:var(--n)}.st-r{--sc:var(--r)}
+@media (max-width:1100px){.steps4{grid-template-columns:1fr}}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fga' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbbf24'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23fga)'/%3E%3Cpath d='M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z' fill='%23fb7185'/%3E%3C/svg%3E">
+<style>
+.fam-bar{background:rgba(255,255,255,.94);border-bottom:1px solid #e7eaef;position:relative;z-index:60}
+.fam-in{max-width:1300px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:36px;min-height:64px}
+.fam-brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#f97316;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-brand svg{display:block;width:32px;height:32px;flex:none}
+.fam-nav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.fam-nav::-webkit-scrollbar{display:none}
+.fam-nav a{display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-nav a.she{background:#fde7f1;color:#e11d74}.fam-nav a.she:hover,.fam-nav a.she.on{background:#e11d74;color:#fff}
+.fam-nav a.he{background:#eceafd;color:#4f46e5}.fam-nav a.he:hover,.fam-nav a.he.on{background:#4f46e5;color:#fff}
+.fam-nav a.talk{background:#e3f6ee;color:#10b981}.fam-nav a.talk:hover,.fam-nav a.talk.on{background:#10b981;color:#fff}
+.fam-bc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-bc a{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:99px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05);color:#6b7585;font-size:12.5px;font-weight:600;text-decoration:none}
+.fam-bc a.cur{background:var(--bcs);color:var(--bc);box-shadow:none}
+.fam-bc .sep{color:#c3c8d0;font-size:14px}
+.fam-bc + h1{margin-top:0!important}
+@media (max-width:720px){.fam-in{gap:14px;padding:0 16px}}
+@media (max-width:420px){.fam-brand span{display:none}.fam-nav a{padding:0 11px}}
+</style>
+</head>
+<body>
+<div class="fam-bar"><div class="fam-in"><a class="fam-brand" href="../"><svg viewBox="0 0 32 32"><defs><linearGradient id="fga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#fga)"/><path d="M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z" fill="#fff"/><path d="M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z" fill="#fb7185"/></svg><span>美好家园</span></a><nav class="fam-nav"><a class="she" href="../wife/">👩 老婆</a><a class="he" href="../husband/">👨 老公</a><a class="talk on" href="../talk/">🕊 沟通</a></nav></div></div>
+<div class="xpage">
+<div class="layout">
+<nav class="sidenav">
+  <p class="ttl">目录</p>
+  <a href="#card">🃏 30 秒版</a>
+  <a href="#four">🔍 4 步详解</a>
+  <a href="#flow">🧘 想发火时的 4 个小步骤</a>
+  <a href="#s1">💬 例 1 · 家务分工</a>
+  <a href="#s2">💬 例 2 · 玩具不收</a>
+  <a href="#s3">💬 例 3 · 没商量的开销</a>
+  <a href="#s4">💬 例 4 · 说话时对方在看手机</a>
+  <a href="#s5">💬 例 5 · 被指责的时候</a>
+  <a href="#s6">💬 例 6 · 小宝早上吃饭慢</a>
+  <a href="#s7">💬 例 7 · 吃饭看手机</a>
+  <a href="#words">📖 词表</a>
+  <a href="#trap">🚧 常见的坑</a>
+</nav>
+<div class="wrap">
+<nav class="fam-bc" style="--bc:#10b981;--bcs:#e3f6ee"><a href="../">🏡 美好家园</a><span class="sep">›</span><a class="cur" href="#">🕊 沟通</a></nav>
+<h1>🕊 非暴力沟通 练习卡</h1>
+
+
+<section id="card" class="card">
+  <h2><span class="hi">🃏</span>30 秒版（记住这一句就够）</h2>
+  <div class="formula">
+    <span class="step o">观察</span>当我看到 / 听到 ……（像摄像机拍到的事实）<br>
+    <span class="step f">感受</span>我觉得 ……（一个情绪词）<br>
+    <span class="step n">需要</span>因为我需要 / 我在乎 ……（自己的需要，不是对方的错）<br>
+    <span class="step r">请求</span>你愿不愿意 ……？（具体的、现在就能做的一件事）
+  </div>
+  <p><strong>核心只有一条：说「我」，不说「你怎么样」。</strong>把「你又…」「你总是…」换成「我看到…我觉得…我需要…」。</p>
+</section>
+
+<section id="four">
+  <h2><span class="hi">🔍</span>4 步详解</h2>
+  <div class="desc">每一步都有一个「容易混进去的东西」。练的就是把它挑出来</div>
+  <div class="steps4">
+  <div class="st4 st-o">
+  <h3><span class="step o">观察</span>说事实，不说评价</h3>
+  <p>标准：<strong>换一个人站在旁边看，也会同意你说的。</strong>带上时间、次数、具体动作。</p>
+  <div class="bad">❌ 你从来不做家务。<span class="note">（「从来」「总是」「又」都是评价，对方第一反应是反驳）</span></div>
+  <div class="good">✅ 这周 7 天的晚饭碗，有 5 天是我洗的。</div>
+  </div>
+  <div class="st4 st-f">
+  <h3><span class="step f">感受</span>说情绪，不说想法</h3>
+  <p>标准：<strong>「我觉得」后面接的是一个情绪词</strong>（累、烦、着急、失落、担心）。如果后面接的是「你…」，那就是想法，不是感受。</p>
+  <div class="bad">❌ 我觉得你不在乎这个家。<span class="note">（这是对对方的判断，伪装成感受）</span></div>
+  <div class="bad">❌ 我觉得被忽视了。<span class="note">（「被…」暗含「你做了什么」，也是判断）</span></div>
+  <div class="good">✅ 我觉得有点累，也有点委屈。</div>
+  </div>
+  <div class="st4 st-n">
+  <h3><span class="step n">需要</span>说自己需要什么，不说对方该怎样</h3>
+  <p>标准：<strong>需要是人人都有的东西</strong>（休息、公平、被理解、安心、整洁、一起）。它不指向某个人。<br>
+  感受是信号灯，需要是信号背后的原因：<strong>「我烦」不是因为碗，是因为我需要休息和公平。</strong></p>
+  <div class="bad">❌ 我需要你去洗碗。<span class="note">（这是「策略」，只有一种做法；需要可以有很多做法）</span></div>
+  <div class="good">✅ 因为我晚上也想有点休息的时间，也希望家务分得公平一点。</div>
+  </div>
+  <div class="st4 st-r">
+  <h3><span class="step r">请求</span>具体、能做、是「做什么」不是「别做什么」，对方可以说不</h3>
+  <ul>
+    <li><strong>具体</strong>：谁、什么时候、做什么。「多体谅我一点」做不到，「这周二四你洗碗好吗」做得到</li>
+    <li><strong>正向</strong>：说要做什么，不说不要做什么</li>
+    <li><strong>可以被拒绝</strong>：对方说「不」时你会生气，那就是命令不是请求。被拒绝了就回到需要，一起想别的办法</li>
+  </ul>
+  <div class="bad">❌ 你以后能不能自觉一点？</div>
+  <div class="good">✅ 我们周末花 10 分钟，把晚饭后的活分一下，你愿意吗？</div>
+  </div>
+  </div>
+</section>
+
+<section id="flow">
+  <h2><span class="hi">🧘</span>想发火时的 4 个小步骤</h2>
+  <div class="desc">这次改进点的判定：上头憋着的那天，有没有按 4 步说出来</div>
+  <ol>
+    <li><strong>先不说</strong>：上头的当下不用马上开口。3 次长呼气（和睡前那套一样）</li>
+    <li><strong>先对自己用一遍 4 步</strong>（不出声，30 秒）：我看到了什么？我现在是什么感受？我需要的是什么？我想请她做哪一件具体的事？<br>
+      <span class="note">想不出「需要」的时候，就是还没冷静下来，再等一等</span></li>
+    <li><strong>当天找个平静的时候说</strong>（不在孩子面前，不在对方正忙的时候）：先问一句「我想说一件小事，现在方便吗？」</li>
+    <li><strong>说完 4 步就停</strong>，听对方的回应。对方有情绪时，换成听她的 4 步（见例 5）</li>
+  </ol>
+  <p class="note">不用说得很标准。第一次说得生硬很正常 —— 能把「你总是」换成「我看到」，就已经做到了一半。</p>
+</section>
+
+<section id="s1">
+  <h2><span class="hi">💬</span>例 1 · 家务分工（对妻子）</h2>
+  <div class="desc">场景：晚上 9 点，水池里堆着晚饭的碗，这周大多是我洗的。我有点烦，憋着没说</div>
+  <div class="bad">❌ 憋着，或者：「你怎么又不洗碗？我天天上班还要干这些。」</div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>这周 7 天的晚饭碗，有 5 天是我洗的</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>我有点累，也有点委屈</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>晚上我也想有一点休息的时间，也希望家里的活分得公平</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>周末我们花 10 分钟，把晚饭后的活重新分一下，你愿意吗？</td></tr>
+  </table>
+  <div class="say">💬「这周 7 天的晚饭碗，有 5 天是我洗的。我有点累，也有点委屈 —— 晚上我也想有点休息的时间，也希望家里的活分得公平一点。周末我们花 10 分钟把饭后的活分一下，你看行吗？」</div>
+  <p class="note">要点：没说「你懒」，只说数字。请求是「一起分」，不是「你去洗」—— 方案由两个人定（使命宣言：互助合作）。</p>
+</section>
+
+<section id="s2">
+  <h2><span class="hi">💬</span>例 2 · 玩具不收（对孩子）</h2>
+  <div class="desc">场景：睡前，客厅地上全是积木，叫了两遍没反应</div>
+  <div class="bad">❌「说了多少遍了！再不收就全扔掉！」</div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>地上有好多积木，爸爸刚才说了两次</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>爸爸有点着急</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>马上要睡觉了，爸爸想让家里整整齐齐的，明天你也好找到它们</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>你想先收红色的，还是先收蓝色的？</td></tr>
+  </table>
+  <div class="say">💬「地上有好多积木哦。爸爸有点着急，因为马上要睡觉了，爸爸想让家里整整齐齐的。你想先收红色的，还是先收蓝色的？」</div>
+  <p class="note">要点：对孩子句子要短，感受用简单的词。请求给两个选项 —— 对应使命宣言「给孩子选择的自由」「东西用完放回原位」。蹲下来、平视着说。</p>
+</section>
+
+<section id="s3">
+  <h2><span class="hi">💬</span>例 3 · 没商量的开销（对妻子）</h2>
+  <div class="desc">场景：信用卡账单里有一笔 3 万円的东西，买之前没聊过。触发源是「金钱」</div>
+  <div class="bad">❌ 憋着，或者：「这么贵的东西你怎么不跟我说一声？乱花钱。」</div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>这个月账单里有一笔 3 万円，之前我们没聊过</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>我看到的时候有点不安</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>我想对家里的钱心里有数，也想大的开销我们一起商量</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>以后超过 2 万円的东西，买之前我们互相说一声，你觉得可以吗？</td></tr>
+  </table>
+  <div class="say">💬「这个月账单里有一笔 3 万円，之前我们没聊过。我看到的时候有点不安 —— 我想对家里的钱心里有数，大的开销也想我们一起商量。以后超过 2 万円的，买之前互相说一声，你觉得可以吗？」</div>
+  <p class="note">要点：没有说「乱花」（评价），也没有追问「为什么买」。请求对两个人都适用（「互相」），不是只管她。金额线由两人商量，2 万只是例子。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="hi">💬</span>例 4 · 说话时对方在看手机（对妻子）</h2>
+  <div class="desc">场景：我在说今天的事，她一直看着手机，嗯嗯地应</div>
+  <div class="bad">❌ 当场冷脸不说了，或者：「你根本没在听。」</div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>我刚才说话的时候，你一直在看手机</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>我有点失落</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>这件事对我挺重要的，我想被听到</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>你看完这条之后，能不能给我 5 分钟，我们聊一下？</td></tr>
+  </table>
+  <div class="say">💬「我刚才说话的时候你一直在看手机，我有点失落 —— 这件事对我挺重要的，我想被听到。你看完这条之后，给我 5 分钟聊一下好吗？」</div>
+  <p class="note">要点：「你根本没在听」是对她内心的判断（她可能在听）；「你一直在看手机」是事实。请求给了她先处理完手上的事的空间。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="hi">💬</span>例 5 · 被指责的时候（反过来：用 4 步去听）</h2>
+  <div class="desc">场景：她说「你每天就知道对着电脑，家里什么事都不管！」—— NVC 的另一半是<strong>听</strong>：不辩解，先猜她的感受和需要</div>
+  <div class="bad">❌ 立刻反驳：「我哪里不管了？上周不是我带孩子去的吗？」</div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>（听出她说的事实）这段时间我在电脑前的时间很多</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>（猜）你是不是觉得很累，有点孤单？</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>（猜）你希望有人一起分担，也希望我们多点在一起的时间？</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>（问）你最希望我先接过哪一件事？</td></tr>
+  </table>
+  <div class="say">💬「你是不是这段时间特别累，觉得都是你一个人在扛？……你最希望我先接过哪一件？」</div>
+  <p class="note">要点：把「你每天就知道…」翻译成「她累了、她需要分担」，就不会被话里的刺扎到。猜错了没关系，她会纠正你 —— 纠正本身就是在说出真实的需要。<br>
+  对应使命宣言：<strong>等对方说完并重复对方的话，确认意思之后再回答</strong>。这一步就是 NVC 式的重复。</p>
+</section>
+
+<section id="s6">
+  <h2><span class="hi">💬</span>例 6 · 早上吃饭慢、总迟到（对孩子）</h2>
+  <div class="desc">场景：早上小宝吃饭很慢，每次都很晚才出门，去保育园总是迟到。现在的做法是一直催「快点」</div>
+  <div class="bad">❌「快点吃！快点！又要迟到了！」<span class="note">（「快点」是爸爸的急，不是她能照着做的一件事；催得越多，越容易变成拉锯）</span></div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>碗里还有一半，墙上的钟快到出门的时间了</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>爸爸有点着急</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>爸爸想按时送你到保育园，你也能和小朋友一起开始玩</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>这几口吃完我们就出门。你想先吃鸡蛋，还是先吃面包？</td></tr>
+  </table>
+  <div class="say">💬「碗里还有一半哦，钟快到出门的时间了。爸爸有点着急，因为想按时送你去保育园，你也能和小朋友一起玩。这几口吃完我们就出门 —— 你想先吃鸡蛋，还是先吃面包？」</div>
+  <p class="note">要点：小孩子还没有「几点」的概念，「快点」「要迟到了」她听不懂，要换成看得见的东西（碗里还剩多少・钟的长针到哪）。请求说成一件马上能做的小事，再给两个选项。说一遍就停，不要连着催。<br>
+  如果每天都这样，可能不是她的问题，是早上的流程（几点开饭・盛多少）—— 这一条用不上 4 步，可以在 2 周一次的沟通时间和老婆一起看。</p>
+</section>
+
+<section id="s7">
+  <h2><span class="hi">💬</span>例 7 · 吃饭时看手机（对妻子）</h2>
+  <div class="desc">场景：一家人吃饭，她边吃边看手机。我吃饭的时候不喜欢别人看手机，觉得很不尊重人</div>
+  <div class="bad">❌ 沉着脸不说话，或者：「吃饭能不能别看手机？太不尊重人了。」<span class="note">（「不尊重」是对她的判断，她听到的是指责，第一反应是辩解）</span></div>
+  <table>
+    <tr><td><span class="step o">观察</span></td><td>这几天吃晚饭的时候，你大多在看手机</td></tr>
+    <tr><td><span class="step f">感受</span></td><td>我有点失落，也有点孤单</td></tr>
+    <tr><td><span class="step n">需要</span></td><td>吃饭是我们一天里难得坐在一起的时候，我想和你说说话</td></tr>
+    <tr><td><span class="step r">请求</span></td><td>吃饭的时候我们俩都把手机放到一边，好吗？有急事要看就说一声</td></tr>
+  </table>
+  <div class="say">💬「这几天吃晚饭的时候你大多在看手机，我有点失落 —— 吃饭是我们一天里难得坐在一起的时候，我想和你说说话。吃饭的时候我们俩都把手机放到一边，好吗？有急事要看就说一声。」</div>
+  <p class="note">要点：「不尊重」是看起来像感受的评价（见下面词表），换成自己真实的感觉 —— 失落・孤单。请求说「我们俩都」，自己也做到，不是只要求她；留一个「有急事就说一声」的口子，她才说得出「好」。她说不行也是正常的，回到需要上一起想别的办法（比如只有晚饭不看）。不在饭桌上当着孩子说，挑两个人单独的时候（每 2 周的沟通时间也可以）。</p>
+</section>
+
+<section id="words">
+  <h2><span class="hi">📖</span>词表（想不出词的时候查）</h2>
+  <h3>感受词（「我觉得」后面接这些）</h3>
+  <div class="tags">
+    <span>累</span><span>烦</span><span>着急</span><span>委屈</span><span>失落</span><span>不安</span><span>担心</span><span>紧张</span><span>无奈</span><span>孤单</span><span>难过</span><span>泄气</span>
+    <span class="ok">开心</span><span class="ok">感激</span><span class="ok">放松</span><span class="ok">安心</span><span class="ok">温暖</span>
+  </div>
+  <h3>⚠️ 看起来像感受、其实是评价的词（换掉）</h3>
+  <div class="tags">
+    <span class="ng">被忽视</span><span class="ng">被冤枉</span><span class="ng">被利用</span><span class="ng">被逼</span><span class="ng">不被尊重</span><span class="ng">我觉得你…</span>
+  </div>
+  <h3>需要词（「因为我需要 / 我在乎」后面接这些）</h3>
+  <div class="tags">
+    <span>休息</span><span>公平</span><span>被理解</span><span>被听到</span><span>安心</span><span>心里有数</span><span>整洁</span><span>一起</span><span>分担</span><span>自主</span><span>信任</span><span>亲近</span>
+  </div>
+  <p class="note">感谢也能用 4 步：「你今天把碗洗了（观察），我很放松（感受），晚上终于有时间看会儿书了（需要被满足）。谢谢你。」—— 对应使命宣言「真心欣赏她的优点」。</p>
+</section>
+
+<section id="trap">
+  <h2><span class="hi">🚧</span>常见的坑</h2>
+  <table>
+    <tr><th>坑</th><th>怎么识别</th><th>怎么改</th></tr>
+    <tr><td>用 4 步包装指责</td><td>格式对，语气是质问</td><td>请求被拒绝时你会不会生气？会 → 还没冷静，晚点再说</td></tr>
+    <tr><td>「我觉得你…」</td><td>「觉得」后面跟着「你」</td><td>换成一个情绪词</td></tr>
+    <tr><td>需要变成了「你得…」</td><td>需要里出现了对方</td><td>问自己：这个做法背后，我要的到底是什么？</td></tr>
+    <tr><td>请求太大太模糊</td><td>「以后多体贴一点」</td><td>缩成一件这周就能做的事</td></tr>
+    <tr><td>当着孩子说</td><td>—</td><td>挑两个人单独的时候（每 2 周的沟通时间也可以）</td></tr>
+    <tr><td>追求说得标准</td><td>想半天说不出口，最后又憋着</td><td>只做到「观察＋感受」两步也算，比憋着好</td></tr>
+  </table>
+  <p class="note">出处：Marshall B. Rosenberg《非暴力沟通》（Nonviolent Communication: A Language of Life）。4 个要素和「观察 vs 评价」「感受 vs 想法」「需要 vs 策略」「请求 vs 命令」的区分来自原书；7 个例子是按我们家的情况（家务分工・金钱・孩子・吃饭）改写的。</p>
+</section>
+
+</div>
+</div>
+</div>
+<script>
+(function(){var ls=[].slice.call(document.querySelectorAll('.sidenav a[href^="#"]'));
+var ss=ls.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+function f(){var y=window.scrollY+110,k=0;ss.forEach(function(e,i){if(e&&e.getBoundingClientRect().top+window.scrollY<=y)k=i});
+ls.forEach(function(a,i){a.classList.toggle('on',i===k)})}
+window.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+<script>
+// 本地（file://）打开时，文件夹链接不会自动找 index.html，补上。GitHub Pages 上不变
+if(location.protocol==='file:'){[].forEach.call(document.querySelectorAll('a[href$="/"]'),function(a){a.setAttribute('href',a.getAttribute('href')+'index.html')})}
+</script>
+</body>
+</html>

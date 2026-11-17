@@ -7,44 +7,90 @@
 <meta name="robots" content="noindex,nofollow">
 <title>美好家园</title>
 <style>
-  :root{--bg:#faf7ff;--card:#fff;--ink:#22172e;--sub:#7d6b8f;--line:#eadff7;--she:#e11d74;--he:#4f46e5;--both:#8b5cf6}
-*{box-sizing:border-box}
-  body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);
-    font:16px/1.55 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC",sans-serif}
-  .hero{position:relative;overflow:hidden;color:#fff;padding:44px 16px 70px;text-align:center;
-    background:linear-gradient(135deg,var(--he) 0%,var(--both) 50%,var(--she) 100%)}
-  .hero::before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#fff;opacity:.18;right:-80px;top:-90px;animation:f 9s ease-in-out infinite}
-  @keyframes f{50%{transform:translateY(16px) scale(1.06)}}
-  .hero h1{margin:0;font-size:32px;letter-spacing:.04em}
-  .wrap{max-width:520px;margin:-40px auto 0;padding:0 16px 40px;position:relative;display:grid;gap:14px}
-  a.pick{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;background:var(--card);
-    border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 14px 34px -22px rgba(139,92,246,.8);
-    transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s;-webkit-tap-highlight-color:transparent}
-  a.pick:active{transform:scale(.98)}
-  @media (hover:hover){a.pick:hover{transform:translateY(-4px)}}
-  .em{flex:none;width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:36px}
-  .she .em{background:rgba(225,29,116,.10)} .he .em{background:rgba(79,70,229,.10)}
-  .t{font-size:20px;font-weight:800} .she .t{color:var(--she)} .he .t{color:var(--he)}
-  .m{font-size:13px;color:var(--sub)}
-  .arrow{margin-left:auto;font-size:22px;color:var(--sub)}
-  a.pick.soon{pointer-events:none;opacity:.5;box-shadow:none}
-  @keyframes inL{0%{opacity:0;transform:translateX(-60px)}70%{opacity:1;transform:translateX(6px)}100%{transform:none}}
-  @keyframes inR{0%{opacity:0;transform:translateX(60px)}70%{opacity:1;transform:translateX(-6px)}100%{transform:none}}
-  a.pick.she{animation:inL .7s .15s cubic-bezier(.2,.8,.2,1) backwards}
-  a.pick.he{animation:inR .7s .3s cubic-bezier(.2,.8,.2,1) backwards}
-  body{overflow-x:hidden}
-  @media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+  
+  :root{--bg:#f5f6f8;--card:#fff;--ink:#1f2733;--sub:#6b7585;--line:#e7eaef;--she:#e11d74;--he:#4f46e5;--talk:#10b981;
+    --o:#4a8ba8;--f:#c96442;--n:#8a6bb0;--r:#6b9e5f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:28px 24px 60px}
+  h1{font-size:26px;font-weight:700;margin:0 0 20px;line-height:1.35}
+  .purpose{margin:0 0 20px;color:var(--sub);font-size:13.5px}
+  section{background:var(--card);border-radius:16px;padding:20px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  section h2{font-size:18px;font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+  .hi{flex:none;width:32px;height:32px;border-radius:10px;background:#f1ecfd;display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  a.tile{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+  @media (hover:hover){a.tile:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,39,51,.09);border-color:var(--c)}}
+  .tile .ico{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:25px;background:var(--cs)}
+  .tile .nm{font-weight:700;font-size:15.5px;color:var(--c)}
+  .tile .ds{font-size:12.5px;color:var(--sub)}
+  .tile .ar{margin-left:auto;color:#c3c8d0;font-size:20px}
+  .she{--c:var(--she);--cs:#fde7f1} .he{--c:var(--he);--cs:#eceafd} .talk{--c:var(--talk);--cs:#e3f6ee}
+  .formula{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:14.5px;line-height:1.9}
+  .step{display:inline-block;min-width:44px;text-align:center;font-size:12px;font-weight:700;color:#fff;border-radius:10px;padding:1px 8px;margin-right:8px}
+  .o{background:var(--o)} .f{background:var(--f)} .n{background:var(--n)} .r{background:var(--r)}
+  .formula{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+  .formula .fs{white-space:nowrap}.formula .to{color:#c3c8d0}
+  .formula b{flex-basis:100%;margin-top:2px;font-size:14px}
+  .grid.one{grid-template-columns:1fr}
+  .formula{transition:transform .2s ease,box-shadow .2s ease}
+  @media (hover:hover){.formula:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,39,51,.09)}}  
+  @media (max-width:720px){.formula .to{display:none}.formula .fs{flex-basis:100%}}
+  @media (max-width:720px){.wrap{padding:18px 16px 50px}section{padding:16px 14px}}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fga' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbbf24'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23fga)'/%3E%3Cpath d='M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z' fill='%23fb7185'/%3E%3C/svg%3E">
+<style>
+.fam-bar{background:rgba(255,255,255,.94);border-bottom:1px solid #e7eaef;position:relative;z-index:60}
+.fam-in{max-width:1300px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:36px;min-height:64px}
+.fam-brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#f97316;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-brand svg{display:block;width:32px;height:32px;flex:none}
+.fam-nav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.fam-nav::-webkit-scrollbar{display:none}
+.fam-nav a{display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-nav a.she{background:#fde7f1;color:#e11d74}.fam-nav a.she:hover,.fam-nav a.she.on{background:#e11d74;color:#fff}
+.fam-nav a.he{background:#eceafd;color:#4f46e5}.fam-nav a.he:hover,.fam-nav a.he.on{background:#4f46e5;color:#fff}
+.fam-nav a.talk{background:#e3f6ee;color:#10b981}.fam-nav a.talk:hover,.fam-nav a.talk.on{background:#10b981;color:#fff}
+.fam-bc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-bc a{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:99px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05);color:#6b7585;font-size:12.5px;font-weight:600;text-decoration:none}
+.fam-bc a.cur{background:var(--bcs);color:var(--bc);box-shadow:none}
+.fam-bc .sep{color:#c3c8d0;font-size:14px}
+.fam-bc + h1{margin-top:0!important}
+@media (max-width:720px){.fam-in{gap:14px;padding:0 16px}}
+@media (max-width:420px){.fam-brand span{display:none}.fam-nav a{padding:0 11px}}
 </style>
 </head>
 <body>
-<header class="hero"><h1>美好家园</h1></header>
+<div class="fam-bar"><div class="fam-in"><a class="fam-brand" href="./"><svg viewBox="0 0 32 32"><defs><linearGradient id="fga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#fga)"/><path d="M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z" fill="#fff"/><path d="M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z" fill="#fb7185"/></svg><span>美好家园</span></a><nav class="fam-nav"><a class="she" href="wife/">👩 老婆</a><a class="he" href="husband/">👨 老公</a><a class="talk" href="talk/">🕊 沟通</a></nav></div></div>
 <main class="wrap">
-  <a class="pick she" href="wife/"><span class="em">👩</span><div><div class="t">老婆</div></div><span class="arrow">›</span></a>
-  <a class="pick he" href="husband/"><span class="em">👨</span><div><div class="t">老公</div></div><span class="arrow">›</span></a>
+  <h1>🏡 美好家园</h1>
+
+  <section>
+    <h2><span class="hi">🧹</span>家务育儿</h2>
+    <div class="grid">
+      <a class="tile she" href="wife/"><span class="ico">👩</span><span><span class="nm">老婆</span><br><span class="ds">我负责的家务育儿</span></span><span class="ar">›</span></a>
+      <a class="tile he" href="husband/"><span class="ico">👨</span><span><span class="nm">老公</span><br><span class="ds">我负责的家务育儿</span></span><span class="ar">›</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="hi">🕊</span>好好说话</h2>
+    <div class="grid one">
+      <a class="tile talk" href="talk/"><span class="ico">🕊</span><span><span class="nm">非暴力沟通 练习卡</span><br><span class="ds">想发火的时候，先翻这一页 · 7 个家里的例子</span></span><span class="ar">›</span></a>
+    </div>
+    <div class="formula">
+      <span class="fs"><span class="step o">观察</span>当我看到 / 听到 ……</span><span class="to">→</span>
+      <span class="fs"><span class="step f">感受</span>我觉得 ……</span><span class="to">→</span>
+      <span class="fs"><span class="step n">需要</span>因为我需要 / 我在乎 ……</span><span class="to">→</span>
+      <span class="fs"><span class="step r">请求</span>你愿不愿意 ……？</span>
+      <b>说「我」，不说「你怎么样」。</b>
+    </div>
+  </section>
 </main>
 <script>
 // 本地（file://）打开时，文件夹链接不会自动找 index.html，补上。GitHub Pages 上不变
-if(location.protocol==='file:'){[].forEach.call(document.querySelectorAll('a.pick'),function(a){var h=a.getAttribute('href');if(/\/$/.test(h))a.setAttribute('href',h+'index.html')})}
+if(location.protocol==='file:'){[].forEach.call(document.querySelectorAll('a[href$="/"]'),function(a){a.setAttribute('href',a.getAttribute('href')+'index.html')})}
 </script>
 </body>
 </html>
