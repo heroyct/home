@@ -8,7 +8,7 @@
 <title>东京人几点起床・几点睡</title>
 <style>
   :root{--bg:#f5f6f8;--card:#fff;--ink:#1f2733;--sub:#6b7585;--line:#e7eaef;
-    --c:#8b5cf6;--cs:#f1ecfe;--us:#f97316;--uss:#fff1e6;--ref:#6b7585;--grid:#eef0f3}
+    --c:#8b5cf6;--cs:#f1ecfe;--us:#e11d74;--uss:#fde7f1;--ref:#6b7585;--grid:#eef0f3}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;
     font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif}
@@ -25,9 +25,9 @@
   .card .v{font-size:24px;font-weight:700;margin:2px 0 4px;font-variant-numeric:tabular-nums}
   .card .v small{font-size:14px;color:var(--sub);font-weight:600;margin-left:6px}
   .card .d{font-size:13.5px}
-  .card.us{background:var(--uss);border-color:#fed7aa}
-  .card.us .v{color:#c2410c}
-  .tag{display:inline-block;font-size:12px;font-weight:700;border-radius:99px;padding:1px 9px;margin-right:4px;background:var(--uss);color:#c2410c}
+  .card.us{background:var(--uss);border-color:#f9c2db}
+  .card.us .v{color:#be185d}
+  .tag{display:inline-block;font-size:12px;font-weight:700;border-radius:99px;padding:1px 9px;margin-right:4px;background:#fff;color:#be185d}
 
   .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--sub);margin-bottom:6px}
   .legend i{display:inline-block;vertical-align:middle;margin-right:6px}
@@ -78,7 +78,7 @@
 <main class="wrap">
   <nav class="fam-bc" style="--bc:#8b5cf6;--bcs:#f1ecfe"><a href="../">🏡 美好家园</a><span class="sep">›</span><a class="cur" href="#">🕰 东京人的作息</a></nav>
 <h1>东京人几点起床・几点睡</h1>
-  <p class="lead">东京圈・平日的作息分布，和我们家（8 点过起床・11 点睡）比一比</p>
+  <p class="lead">东京圈・平日的作息分布，和老婆（8 点过起床・11 点睡）比一比</p>
 
   <section>
     <h2><span class="hi">📝</span>总结</h2>
@@ -94,16 +94,16 @@
         <div class="d">集中在 22:00〜0:30。23:00 前睡的约 3 成</div>
       </div>
       <div class="card us">
-        <div class="k">🏡 我们家</div>
+        <div class="k">👩 老婆</div>
         <div class="v">23:00 → 8:00 过<small>约 9 小时</small></div>
-        <div class="d"><span class="tag">睡觉</span>比东京一半人早一点（中间偏早）<br><span class="tag">起床</span>比东京约 9 成的人晚<br><span class="tag">睡眠</span>东京按中位数推算约 7 小时，我们多 2 小时左右</div>
+        <div class="d"><span class="tag">睡觉</span>比东京一半人早一点（中间偏早）<br><span class="tag">起床</span>比东京约 9 成的人晚<br><span class="tag">睡眠</span>东京按中位数推算约 7 小时，老婆多 2 小时左右</div>
       </div>
     </div>
   </section>
 
   <section>
     <h2><span class="hi">☀️</span>几点起床</h2>
-    <div class="legend"><span><i class="sw" style="background:var(--c)"></i>东京圈</span><span><i class="sw-ref"></i>全国（参考）</span><span><i class="sw" style="background:var(--us)"></i>我们家所在的时段</span></div>
+    <div class="legend"><span><i class="sw" style="background:var(--c)"></i>东京圈</span><span><i class="sw-ref"></i>全国（参考）</span><span><i class="sw" style="background:var(--us)"></i>老婆所在的时段</span></div>
     <svg class="ch" id="wake" viewBox="0 0 800 330" role="img" aria-label="东京圈平日起床时间分布"></svg>
     <p class="hint">每根柱子 = 在这 30 分钟里起床的人占全体的 %。刻度写的是这一档的结束时刻（「6:00」= 5:31〜6:00）</p>
     <details><summary>数据表</summary><table id="wake-t"></table></details>
@@ -111,7 +111,7 @@
 
   <section>
     <h2><span class="hi">🌙</span>几点睡觉</h2>
-    <div class="legend"><span><i class="sw" style="background:var(--c)"></i>东京圈</span><span><i class="sw-ref"></i>全国（参考）</span><span><i class="sw" style="background:var(--us)"></i>我们家所在的时段</span></div>
+    <div class="legend"><span><i class="sw" style="background:var(--c)"></i>东京圈</span><span><i class="sw-ref"></i>全国（参考）</span><span><i class="sw" style="background:var(--us)"></i>老婆所在的时段</span></div>
     <svg class="ch" id="bed" viewBox="0 0 800 330" role="img" aria-label="东京圈平日就寝时间分布"></svg>
     <p class="hint">每根柱子 = 在这 30 分钟里睡着的人占全体的 %。刻度写的是这一档的开始时刻（「23:00」= 23:00〜23:29）</p>
     <details><summary>数据表</summary><table id="bed-t"></table></details>
@@ -130,7 +130,7 @@
 <div class="tip" id="tip"></div>
 <script>
 var WAKE = {
-  us: '8:30', usLabel: '我们家 8 点过',
+  us: '8:30', usLabel: '老婆 8 点过',
   rows: [
     ['4:00','3:31〜4:00',0.7,0.6,7.1],['4:30','4:01〜4:30',3.9,2.6,11.0],['5:00','4:31〜5:00',6.9,7.8,17.9],
     ['5:30','5:01〜5:30',9.6,11.1,27.5],['6:00','5:31〜6:00',17.9,19.8,45.4],['6:30','6:01〜6:30',14.9,17.8,60.3],
@@ -140,7 +140,7 @@ var WAKE = {
   cumName: '到这时 已起床（东京圈）'
 };
 var BED = {
-  us: '23:00', usLabel: '我们家 11 点',
+  us: '23:00', usLabel: '老婆 11 点',
   rows: [
     ['20:00','20:00〜20:29',0.8,0.8,2.1],['20:30','20:30〜20:59',1.3,1.2,3.4],['21:00','21:00〜21:29',5.4,5.6,8.8],
     ['21:30','21:30〜21:59',4.5,5.7,13.3],['22:00','22:00〜22:29',9.9,12.0,23.2],['22:30','22:30〜22:59',8.4,10.2,31.6],
@@ -164,7 +164,7 @@ function draw(id, D, verb){
   D.rows.forEach(function(r,i){
     var cx=m.l+band*i+band/2, isUs=r[0]===D.us;
     var t=el('text',{x:cx,y:H-m.b+18,'text-anchor':'middle'},ax); t.textContent=r[0];
-    if(isUs){t.setAttribute('fill','#c2410c');t.setAttribute('font-weight','700')}
+    if(isUs){t.setAttribute('fill','#be185d');t.setAttribute('font-weight','700')}
   });
   D.rows.forEach(function(r,i){
     var x0=m.l+band*i+(band-bw)/2, top=y(r[2]), h=y(0)-top, rr=Math.min(4,h), isUs=r[0]===D.us, col=isUs?'var(--us)':'var(--c)';
@@ -182,7 +182,7 @@ function draw(id, D, verb){
     var hit=el('rect',{x:m.l+band*i,y:m.t,width:band,height:ih,fill:'transparent'},g);
     hit.addEventListener('mousemove',function(e){
       bar.setAttribute('opacity','.8');
-      tip.innerHTML='<b>'+r[1]+' '+verb+'</b>'+(isUs?' <span style="color:#c2410c">← 我们家</span>':'')+'<br>东京圈 '+r[2].toFixed(1)+'%　全国 '+r[3].toFixed(1)+'%<br><span style="color:var(--sub)">'+D.cumName+' '+r[4]+'%</span>';
+      tip.innerHTML='<b>'+r[1]+' '+verb+'</b>'+(isUs?' <span style="color:#be185d">← 老婆</span>':'')+'<br>东京圈 '+r[2].toFixed(1)+'%　全国 '+r[3].toFixed(1)+'%<br><span style="color:var(--sub)">'+D.cumName+' '+r[4]+'%</span>';
       tip.style.opacity=1;
       tip.style.left=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8)+'px'; tip.style.top=(e.clientY-12)+'px';
     });
@@ -191,7 +191,7 @@ function draw(id, D, verb){
   el('line',{x1:m.l,x2:W-m.r,y1:y(0),y2:y(0),stroke:'#8c95a3','stroke-width':1});
   var tb=document.getElementById(id+'-t');
   tb.innerHTML='<tr><th>'+verb+'时间段</th><th>东京圈</th><th>全国</th><th>'+D.cumName+'</th></tr>'+D.rows.map(function(r){
-    return '<tr'+(r[0]===D.us?' class="us"':'')+'><td>'+r[1]+(r[0]===D.us?' 🏡':'')+'</td><td>'+r[2].toFixed(1)+'%</td><td>'+r[3].toFixed(1)+'%</td><td>'+r[4]+'%</td></tr>'}).join('');
+    return '<tr'+(r[0]===D.us?' class="us"':'')+'><td>'+r[1]+(r[0]===D.us?' 👩':'')+'</td><td>'+r[2].toFixed(1)+'%</td><td>'+r[3].toFixed(1)+'%</td><td>'+r[4]+'%</td></tr>'}).join('');
 }
 draw('wake',WAKE,'起床');
 draw('bed',BED,'睡着');
