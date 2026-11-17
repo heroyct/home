@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0ea5e9">
+<meta name="robots" content="noindex,nofollow">
+<title>美好家园</title>
+<style>
+  
+  :root{--bg:#f3f8fc;--card:#fff;--ink:#16263a;--sub:#64748b;--line:#e2ebf3;--c:#0ea5e9;--cs:#e0f2fe;--ok:#10b981;--oks:#dcfce7;--may:#f59e0b;--mays:#fef3c7}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;
+    font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif;
+    padding:0 0 calc(40px + env(safe-area-inset-bottom))}
+  main.wrap{max-width:720px;margin:0 auto;padding:22px 16px 0}
+  h1.pg{font-size:26px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .lead{color:var(--sub);font-size:13.5px;margin:0 0 6px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;font-size:12.5px;color:var(--sub)}
+
+  .week{margin:26px 0 10px;display:flex;align-items:baseline;gap:10px}
+  .week h2{font-size:17px;margin:0}
+  .week small{color:var(--sub);font-size:12.5px}
+
+  .item{background:var(--card);border-radius:16px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:5px solid var(--may);transition:opacity .3s}
+  .item.ok{border-left-color:var(--ok)}
+  .item.past{opacity:.45}
+  .top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+  .date{font-weight:800;font-variant-numeric:tabular-nums}
+  .name{font-weight:700;font-size:16px}
+  .st{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:99px;background:var(--mays);color:#b45309}
+  .ok .st{background:var(--oks);color:#047857}
+  .item ul{margin:8px 0 0;padding-left:1.2em;font-size:13.5px}
+  .item li{margin:2px 0}
+  .item li b{color:var(--ink)}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .meta span{font-size:12px;background:var(--cs);color:#0369a1;border-radius:8px;padding:2px 8px}
+  ol.flow{list-style:none;margin:10px 0 4px;padding:0;border-left:2px solid var(--cs);font-size:13.5px}
+  ol.flow li{position:relative;margin:0 0 8px;padding-left:16px}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--c)}
+  .tm{display:inline-block;min-width:46px;font-weight:800;color:#0369a1;font-variant-numeric:tabular-nums}
+  .or{font-size:12.5px;color:var(--sub);margin:14px 2px 8px}
+  .note{font-size:12.5px;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:22px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fga' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbbf24'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23fga)'/%3E%3Cpath d='M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z' fill='%23fb7185'/%3E%3C/svg%3E">
+<style>
+.fam-bar{background:rgba(255,255,255,.94);border-bottom:1px solid #e7eaef;position:relative;z-index:60}
+.fam-in{max-width:1300px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:36px;min-height:64px}
+.fam-brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#f97316;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-brand svg{display:block;width:32px;height:32px;flex:none}
+.fam-nav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.fam-nav::-webkit-scrollbar{display:none}
+.fam-nav a{display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-nav a.she{background:#fde7f1;color:#e11d74}.fam-nav a.she:hover,.fam-nav a.she.on{background:#e11d74;color:#fff}
+.fam-nav a.he{background:#eceafd;color:#4f46e5}.fam-nav a.he:hover,.fam-nav a.he.on{background:#4f46e5;color:#fff}
+.fam-nav a.talk{background:#e3f6ee;color:#10b981}.fam-nav a.talk:hover,.fam-nav a.talk.on{background:#10b981;color:#fff}
+.fam-nav a.trip{background:#e0f2fe;color:#0284c7}.fam-nav a.trip:hover,.fam-nav a.trip.on{background:#0ea5e9;color:#fff}
+.fam-bc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fam-bc a{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:99px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05);color:#6b7585;font-size:12.5px;font-weight:600;text-decoration:none}
+.fam-bc a.cur{background:var(--bcs);color:var(--bc);box-shadow:none}
+.fam-bc .sep{color:#c3c8d0;font-size:14px}
+.fam-nav a svg{width:22px;height:22px;margin-right:4px;flex:none}.fam-bc a svg{width:18px;height:18px;margin-right:4px;flex:none}
+.fam-bc + h1{margin-top:0!important}
+@media (max-width:720px){.fam-in{gap:14px;padding:0 16px}}
+@media (max-width:420px){.fam-brand span{display:none}.fam-nav a{padding:0 11px}}
+</style>
+</head>
+<body>
+<div class="fam-bar"><div class="fam-in"><a class="fam-brand" href="../"><svg viewBox="0 0 32 32"><defs><linearGradient id="fga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#fga)"/><path d="M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z" fill="#fff"/><path d="M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z" fill="#fb7185"/></svg><span>美好家园</span></a><nav class="fam-nav"><a class="she" href="../wife/"><svg viewBox="0 0 44 44"><path d="M8 26c0-10 6-17 14-17s14 7 14 17v12H8Z" fill="#1f1a17"/><circle cx="22" cy="23" r="11" fill="#fbe0c8"/><path d="M11 21c1-7 6-11 11-11s10 4 11 11c-4-1-8-4-10-7-2 4-7 6-12 7Z" fill="#1f1a17"/><circle cx="18" cy="24" r="1.3" fill="#3b2a20"/><circle cx="26" cy="24" r="1.3" fill="#3b2a20"/><ellipse cx="15.5" cy="27.5" rx="2" ry="1.2" fill="#f9a8c0" opacity=".8"/><ellipse cx="28.5" cy="27.5" rx="2" ry="1.2" fill="#f9a8c0" opacity=".8"/><path d="M19.5 28.5q2.5 2.2 5 0" stroke="#c2410c" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>老婆</a><a class="he" href="../husband/"><svg viewBox="0 0 44 44"><circle cx="22" cy="24" r="11.5" fill="#fbe0c8"/><path d="M10.5 22c0-8 5-12.5 11.5-12.5S33.5 14 33.5 22c-2-3-5-5-8-5.5-3 2-9 3.5-15 5.5Z" fill="#1f1a17"/><circle cx="18" cy="25" r="1.3" fill="#3b2a20"/><circle cx="26" cy="25" r="1.3" fill="#3b2a20"/><path d="M15.5 21.5h4M24.5 21.5h4" stroke="#1f1a17" stroke-width="1.3" stroke-linecap="round"/><path d="M19.5 29q2.5 2.2 5 0" stroke="#c2410c" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>老公</a><a class="talk" href="../talk/">🕊 沟通</a><a class="trip on" href="../trip/">🚃 出行</a></nav></div></div>
+<main class="wrap">
+
+<nav class="fam-bc" style="--bc:#0ea5e9;--bcs:#e0f2fe"><a href="../">🏡 美好家园</a><span class="sep">›</span><a class="cur" href="#">🚃 出行</a></nav>
+<h1 class="pg">🚃 最近的出行</h1>
+<p class="lead">接下来 2〜3 周（11/21〜12/6）· 一家 3 口 · 坐电车</p>
+<div class="legend"><span class="st" style="background:var(--oks);color:#047857">✅ 定了</span><span class="st">候选</span><span>过了日期的会自动变淡</span></div>
+
+
+<div class="week"><h2>📅 11/21〜11/23</h2><small>11/23（一）是勤労感謝の日，放假</small></div>
+
+<div class="item" data-d="2026-11-21">
+  <div class="top"><span class="date">11/21（六）</span><span class="name">🍁 旧古河庭園 → 飛鳥山公園</span><span class="st">计划中 · 🚲 骑车</span></div>
+  <ol class="flow">
+    <li><span class="tm">9:30</span>骑车出发（约 20 分钟，推算）· 大人孩子都戴头盔</li>
+    <li><span class="tm">10:00</span><b>旧古河庭園</b>：先在上面的洋馆前看秋玫瑰 → 走台阶下到日本庭园，看心字池旁的ハゼ（11/16 已经红了，正是最好看的时候；其他枫树・银杏才开始变色）→ 大瀑布 · 一圈约 1 小时</li>
+    <li><span class="tm">11:00</span>骑车去 <b>飛鳥山公園</b>（约 1.5 km，5〜10 分钟，推算）</li>
+    <li><span class="tm">11:15</span>坐免费的小单轨「アスカルゴ」上山（10:00〜16:00）→ 儿童游乐区：SL 和都電车厢可以爬上去玩，城堡滑梯・大象滑梯 · 银杏也开始黄了</li>
+    <li><span class="tm">12:00</span>午饭：<b>带便当在公园吃最省事</b>（可以带吃的进去），或者去王子站附近吃</li>
+    <li><span class="tm">13:00</span>再玩一会儿，孩子累了就骑车回家（14:00 前后到家）</li>
+  </ol>
+  <ul>
+    <li>旧古河 <b>台阶和坡很多</b> · 不能铺垫子野餐，吃饭放到飛鳥山</li>
+    <li>⚠ <b>两边的自行车停车处都没查到</b>：到了先问旧古河门口的工作人员，不行就停西ケ原站附近的收费駐輪場</li>
+  </ul>
+  <div class="meta"><span>旧古河 9:00〜17:00（最后入园 16:30）</span><span>大人 150 円 × 2，小学生以下免费</span><span>飛鳥山 免费</span></div>
+</div>
+
+<div class="item ok" data-d="2026-11-22">
+  <div class="top"><span class="date">11/22（日）15:00</span><span class="name">🎹 北とぴあ 管风琴演奏会</span><span class="st">✅ 定了</span></div>
+  <ul>
+    <li>1 楼大厅，约 40 分钟 · 曲目：门德尔松《主题与变奏》等</li>
+    <li><b>免费，不用预约 · 座位少，早点到</b></li>
+  </ul>
+  <div class="meta"><span>0 円（只要车票）</span></div>
+</div>
+
+
+<div class="week"><h2>📅 11/28〜11/29</h2><small>红叶最好看的一周，挑一个去</small></div>
+
+<div class="item" data-d="2026-11-29">
+  <div class="top"><span class="date">11/28（六）或 29（日）</span><span class="name">🍁 新宿御苑</span><span class="st">候选</span></div>
+  <ul>
+    <li>枫叶和温室前的银杏预计 11 月下旬〜12 月上旬最好看</li>
+    <li><b>草坪很大，孩子可以跑</b> · 可以顺路去神宮外苑的银杏大道（免费，预计 11/24 前后起最好看）</li>
+  </ul>
+  <div class="meta"><span>大人 500 × 2（往年），中学生以下免费</span><span>周一休园</span><span>新宿 走过去</span></div>
+</div>
+
+<div class="or">或者</div>
+
+<div class="item" data-d="2026-11-29">
+  <div class="top"><span class="date">11/28（六）或 29（日）</span><span class="name">🍁 再去一次旧古河庭園</span><span class="st">候选</span></div>
+  <ul>
+    <li>这时候整个园子的枫叶都红了（往年 11 月下旬〜12 月上旬）</li>
+  </ul>
+  <div class="meta"><span>大人 150 × 2</span></div>
+</div>
+
+
+<div class="week"><h2>📅 11/25〜12/6</h2><small>这段时间里哪天都行</small></div>
+
+<div class="item" data-d="2026-12-06">
+  <div class="top"><span class="date">11/25〜12/6 晚上</span><span class="name">🏮 六義園 红叶点灯</span><span class="st">候选</span></div>
+  <ul>
+    <li>18:00〜20:30（最后入园 19:30）· 今年多了土蔵和竹林的投影</li>
+    <li><b>前売票只在网上卖，每天有数量限制</b> · 晚上冷，孩子穿厚一点</li>
+    <li>白天去也行（9:00〜17:00，大人 300 × 2，小学生以下免费）</li>
+  </ul>
+  <div class="meta"><span>点灯：前売 1,000 / 当日 1,200（每个大人）</span><span>南北線・JR 駒込 走约 7 分钟</span></div>
+</div>
+
+<div class="item" data-d="2026-12-06">
+  <div class="top"><span class="date">11/20 起</span><span class="name">🎬 电影《ラブル＆クルー IN シアター 2026》</span><span class="st">候选</span></div>
+  <ul>
+    <li>汪汪队的衍生片，讲盖房子、修东西，打斗很少 · <b>只有 55 分钟</b></li>
+  </ul>
+  <div class="meta"><span>在池袋看 · 票价未查</span></div>
+</div>
+
+<div class="item" data-d="2026-12-31">
+  <div class="top"><span class="date">12/4（五）起</span><span class="name">🎬 迪士尼新片《ビリーと魔法のはじまり》</span><span class="st">等上映</span></div>
+  <ul>
+    <li>同场加映《星际宝贝》短片 · 时长和适不适合小宝，上映后再看</li>
+  </ul>
+</div>
+
+<p class="note">票价・开放时间是 11/17 查的，出门前再看一眼官网。看电影选日语配音版，订靠过道的位子。</p>
+
+</main>
+<script>
+// 过了日期的计划变淡（按每项的 data-d，当天还算没过）
+(function(){
+  var t=new Date();t.setHours(0,0,0,0);
+  [].forEach.call(document.querySelectorAll('.item[data-d]'),function(el){
+    var p=el.getAttribute('data-d').split('-');
+    if(new Date(+p[0],p[1]-1,+p[2])<t) el.classList.add('past');
+  });
+})();
+</script>
+<script>
+// 本地（file://）打开时，文件夹链接不会自动找 index.html，补上。GitHub Pages 上不变
+if(location.protocol==='file:'){[].forEach.call(document.querySelectorAll('a[href$="/"]'),function(a){a.setAttribute('href',a.getAttribute('href')+'index.html')})}
+</script>
+</body>
+</html>
