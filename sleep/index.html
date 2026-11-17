@@ -185,20 +185,29 @@ function draw(id, D, verb){
     var t=el('text',{x:cx,y:H-m.b+18,'text-anchor':'middle'},ax); t.textContent=r[0];
     if(mk){t.setAttribute('fill',mk[1]==='us'?'#be185d':'#4338ca');t.setAttribute('font-weight','700')}
   });
-  var later=[];
+  var later=[], placed=[];
   D.rows.forEach(function(r,i){
     var x0=m.l+band*i+(band-bw)/2, top=y(r[2]), h=y(0)-top, rr=Math.min(4,h), mk=D.marks[r[0]], col=mk?'var(--'+mk[1]+')':'var(--c)';
     var g=el('g',{});
     var bar=el('path',{d:'M'+x0+','+y(0)+' V'+(top+rr)+' Q'+x0+','+top+' '+(x0+rr)+','+top+' H'+(x0+bw-rr)+' Q'+(x0+bw)+','+top+' '+(x0+bw)+','+(top+rr)+' V'+y(0)+' Z',fill:col},g);
     el('line',{x1:x0-3,x2:x0+bw+3,y1:y(r[3]),y2:y(r[3]),stroke:'var(--ref)','stroke-width':2,'stroke-dasharray':'4 3'},g);
     if(mk) later.push(function(){
-      var ly=Math.min(top,y(r[3]))-10, cx=x0+bw/2;
-      el('line',{x1:cx,x2:cx,y1:ly-6,y2:Math.min(top,y(r[3]))-3,stroke:col,'stroke-width':2,'pointer-events':'none'});
-      var ln=mk[0].split(' '), who=ln.shift(), when=ln.join(' ');
-      var tw=Math.max(56,when.length*9+20), bx=Math.max(m.l,Math.min(cx-tw/2,W-m.r-tw));
-      el('rect',{x:bx,y:ly-46,width:tw,height:40,rx:12,fill:col,'pointer-events':'none'});
-      el('text',{x:bx+tw/2,y:ly-30,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'#fff',opacity:.85,'pointer-events':'none'}).textContent=who;
-      el('text',{x:bx+tw/2,y:ly-13,'text-anchor':'middle','font-size':13,'font-weight':700,fill:'#fff','pointer-events':'none'}).textContent=when;
+      // 标签不和别的柱子・虚线・标签重叠：试「居中・往左・往右」三个位置，选最低的那个
+      var cx=x0+bw/2, own=Math.min(top,y(r[3]));
+      var ln=mk[0].split(' '), who=ln.shift(), when=ln.join(' '), tw=Math.max(56,when.length*9+20), PH=40;
+      function clampX(v){return Math.max(m.l,Math.min(v,W-m.r-tw))}
+      function topAt(xa,xb){var t=H;D.rows.forEach(function(q,j){var a=m.l+band*j+(band-bw)/2-3, b=a+bw+6;if(b>xa&&a<xb)t=Math.min(t,y(q[2]),y(q[3]))});return t}
+      var best=null;
+      [clampX(cx-tw/2), clampX(x0+bw+3-tw), clampX(x0-3)].forEach(function(bx){
+        var bot=topAt(bx,bx+tw)-8, moved=true;
+        while(moved){moved=false;placed.forEach(function(p){if(bx<p.x+p.w+4&&bx+tw>p.x-4&&bot>p.y-4&&bot-PH<p.y+PH+4){bot=p.y-6;moved=true}})}
+        if(!best||bot>best.bot+0.5)best={bx:bx,bot:bot};
+      });
+      var bx=best.bx, py=best.bot-PH; placed.push({x:bx,y:py,w:tw});
+      el('line',{x1:cx,x2:cx,y1:best.bot,y2:own-3,stroke:col,'stroke-width':2,'pointer-events':'none'});
+      el('rect',{x:bx,y:py,width:tw,height:PH,rx:12,fill:col,'pointer-events':'none'});
+      el('text',{x:bx+tw/2,y:py+16,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'#fff',opacity:.85,'pointer-events':'none'}).textContent=who;
+      el('text',{x:bx+tw/2,y:py+33,'text-anchor':'middle','font-size':13,'font-weight':700,fill:'#fff','pointer-events':'none'}).textContent=when;
     });
     if(r[2]===mx && !sp){el('text',{x:x0+bw/2,y:Math.min(top,y(r[3]))-6,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'var(--ink)'}).textContent=r[2]+'%'}
     var hit=el('rect',{x:m.l+band*i,y:m.t,width:band,height:ih,fill:'transparent'},g);
