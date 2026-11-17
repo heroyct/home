@@ -48,6 +48,17 @@
   .tip{position:fixed;pointer-events:none;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;
     padding:8px 11px;font-size:13px;box-shadow:0 10px 24px rgba(31,39,51,.14);opacity:0;transition:opacity .1s;white-space:nowrap;z-index:99}
 
+  .hb{display:grid;gap:12px;margin-top:4px}
+  .hb .r{display:grid;grid-template-columns:92px 1fr;align-items:center;gap:10px}
+  .hb .nm{font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:6px;line-height:1.3}
+  .hb .nm small{display:block;font-size:11.5px;color:var(--sub);font-weight:500}
+  .hb .tr{position:relative;height:30px;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),var(--grid) calc(10% - 1px) 10%)}
+  .hb .bar{position:absolute;left:0;top:3px;bottom:3px;border-radius:0 6px 6px 0;background:var(--c)}
+  .hb .bar.base{background:#7b8798}
+  .hb .bar.us{background:var(--us)}.hb .bar.he{background:var(--he)}
+  .hb .v{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;padding-right:10px;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .hb .ax{display:grid;grid-template-columns:92px 1fr;gap:10px;font-size:11px;color:#8c95a3}
+  .hb .ax div:last-child{display:flex;justify-content:space-between}
   details{margin-top:10px}
   details summary{cursor:pointer;color:var(--sub);font-size:13.5px}
   table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:6px}
@@ -105,12 +116,12 @@
       <div class="card us">
         <div class="k"><svg class="av" viewBox="0 0 44 44"><path d="M8 26c0-10 6-17 14-17s14 7 14 17v12H8Z" fill="#1f1a17"/><circle cx="22" cy="23" r="11" fill="#fbe0c8"/><path d="M11 21c1-7 6-11 11-11s10 4 11 11c-4-1-8-4-10-7-2 4-7 6-12 7Z" fill="#1f1a17"/><circle cx="18" cy="24" r="1.3" fill="#3b2a20"/><circle cx="26" cy="24" r="1.3" fill="#3b2a20"/><ellipse cx="15.5" cy="27.5" rx="2" ry="1.2" fill="#f9a8c0" opacity=".8"/><ellipse cx="28.5" cy="27.5" rx="2" ry="1.2" fill="#f9a8c0" opacity=".8"/><path d="M19.5 28.5q2.5 2.2 5 0" stroke="#c2410c" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>老婆</div>
         <div class="v">23:00 → 8:00 过<small>约 9 小时</small></div>
-        <div class="rows"><div><span class="tag">起床</span><b class="em">比东京 9 成的人晚</b></div><div><span class="tag">睡觉</span>东京的中间偏早</div><div><span class="tag">睡眠</span>比东京（约 7 小时）多 2 小时</div></div>
+        <div class="rows"><div><span class="tag">起床</span><b class="em">比东京 9 成的人晚</b></div><div><span class="tag">睡觉</span>东京的中间偏早</div><div><span class="tag">睡眠</span>比东京平日平均多约 2 小时</div></div>
       </div>
       <div class="card he">
         <div class="k"><svg class="av" viewBox="0 0 44 44"><circle cx="22" cy="24" r="11.5" fill="#fbe0c8"/><path d="M10.5 22c0-8 5-12.5 11.5-12.5S33.5 14 33.5 22c-2-3-5-5-8-5.5-3 2-9 3.5-15 5.5Z" fill="#1f1a17"/><circle cx="18" cy="25" r="1.3" fill="#3b2a20"/><circle cx="26" cy="25" r="1.3" fill="#3b2a20"/><path d="M15.5 21.5h4M24.5 21.5h4" stroke="#1f1a17" stroke-width="1.3" stroke-linecap="round"/><path d="M19.5 29q2.5 2.2 5 0" stroke="#c2410c" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>老公</div>
         <div class="v">22:30 过 → 7:00<small>约 8 小时 15 分</small></div>
-        <div class="rows"><div><span class="tag">起床</span>东京的中间偏晚</div><div><span class="tag">睡觉</span>比东京 7 成的人早</div><div><span class="tag">睡眠</span>比东京（约 7 小时）多 1 小时 15 分</div></div>
+        <div class="rows"><div><span class="tag">起床</span>东京的中间偏晚</div><div><span class="tag">睡觉</span>比东京 7 成的人早</div><div><span class="tag">睡眠</span>比东京平日平均多约 1 小时</div></div>
       </div>
     </div>
   </section>
@@ -131,12 +142,19 @@
     <details><summary>数据表</summary><table id="bed-t"></table></details>
   </section>
 
+  <section>
+    <h2><span class="hi">😴</span>一天睡多久</h2>
+    <div class="hb" id="dur"></div>
+    <p class="hint">东京圈・全国是一天的平均睡眠时间（含午睡）。老婆・老公是按平时几点睡、几点起算的大概时长</p>
+  </section>
+
   <section class="note">
     <h2><span class="hi">🔎</span>数据从哪来</h2>
     <ul>
       <li>NHK 放送文化研究所「国民生活時間調査 2025」（2025 年 10 月调查）。「東京圏」是 NHK 的地区分类。</li>
       <li>原数据是每 15 分钟「在睡觉的人的比例」。相邻时刻的增减 = 这段时间睡着或醒来的人，是推算出来的分布，不是直接问的几点起床。</li>
       <li>回答按 15 分钟刻度填，所以时间容易凑在整点和半点上。</li>
+      <li>「一天睡多久」是 NHK 公布的全员平均睡眠时间（2025 年）。东京圈：平日 7 小时 12 分・周六 7 小时 33 分・周日 7 小时 58 分；全国平日 7 小时 14 分。</li>
       <li>0 点以后的就寝用的是「平日凌晨」的数据，和前一晚的数据接在一起算，0:00〜0:29 那一档可能偏高一点。</li>
     </ul>
   </section>
@@ -225,6 +243,16 @@ function draw(id, D, verb){
   tb.innerHTML='<tr><th>'+verb+'时间段</th><th>东京圈</th><th>全国</th><th>'+D.cumName+'</th></tr>'+D.rows.map(function(r){
     var k=D.marks[r[0]];return '<tr'+(k?' class="'+k[1]+'"':'')+'><td>'+r[1]+(k?' '+(k[1]==='us'?AV_W:AV_H):'')+'</td><td>'+r[2].toFixed(1)+'%</td><td>'+r[3].toFixed(1)+'%</td><td>'+r[4]+'%</td></tr>'}).join('');
 }
+(function(){
+  var R=[['us','老婆','平日',9.0,'约 9 小时'],['he','老公','平日',8.25,'约 8 小时 15 分'],
+         ['','东京圈','周日',7+58/60,'7 小时 58 分'],['','东京圈','周六',7+33/60,'7 小时 33 分'],
+         ['','全国','平日',7+14/60,'7 小时 14 分'],['base','东京圈','平日',7+12/60,'7 小时 12 分']];
+  var MAX=10, box=document.getElementById('dur');
+  box.innerHTML=R.map(function(r){
+    var av=r[0]==='us'?AV_W:r[0]==='he'?AV_H:'';
+    return '<div class="r"><div class="nm">'+av+'<span>'+r[1]+'<small>'+r[2]+'</small></span></div><div class="tr"><div class="bar '+r[0]+'" style="width:'+(r[3]/MAX*100)+'%"></div><span class="v" style="right:'+(100-r[3]/MAX*100)+'%">'+r[4]+'</span></div></div>';
+  }).join('')+'<div class="ax"><div></div><div><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10 小时</span></div></div>';
+})();
 function drawAll(){draw('wake',WAKE,'起床');draw('bed',BED,'睡着')}
 drawAll();
 var lastW=innerWidth; addEventListener('resize',function(){if(innerWidth!==lastW){lastW=innerWidth;drawAll()}});
