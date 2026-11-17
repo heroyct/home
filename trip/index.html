@@ -8,44 +8,50 @@
 <title>美好家园</title>
 <style>
   
-  :root{--bg:#f3f8fc;--card:#fff;--ink:#16263a;--sub:#64748b;--line:#e2ebf3;--c:#0ea5e9;--cs:#e0f2fe;--ok:#10b981;--oks:#dcfce7;--may:#f59e0b;--mays:#fef3c7}
+  :root{--bg:#f3f8fc;--card:#fff;--ink:#16263a;--sub:#64748b;--line:#e6eef5;--c:#0ea5e9;--cs:#e0f2fe;--leaf:#ea580c;--leafs:#fff1e6}
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;
-    font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif;
-    padding:0 0 calc(40px + env(safe-area-inset-bottom))}
-  main.wrap{max-width:720px;margin:0 auto;padding:22px 16px 0}
-  h1.pg{font-size:26px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
-  .lead{color:var(--sub);font-size:13.5px;margin:0 0 6px}
+    font:15px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei",sans-serif;
+    padding:0 0 calc(48px + env(safe-area-inset-bottom))}
+  main.wrap{max-width:680px;margin:0 auto;padding:22px 16px 0}
+  h1.pg{font-size:26px;margin:0 0 2px}
+  .lead{color:var(--sub);font-size:13.5px;margin:0 0 22px}
 
-  .week{margin:26px 0 10px;display:flex;align-items:baseline;gap:10px}
-  .week h2{font-size:17px;margin:0}
-  .week small{color:var(--sub);font-size:12.5px}
+  
+  .day{background:var(--card);border-radius:24px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 20px 40px -30px rgba(234,88,12,.5)}
+  .cover{position:relative;padding:24px 22px 22px;color:#fff;background:linear-gradient(135deg,#f59e0b,#ea580c 55%,#dc2626)}
+  .cover::after{content:"🍁";position:absolute;right:14px;top:4px;font-size:84px;opacity:.22;transform:rotate(18deg)}
+  .cover .when{font-size:13px;font-weight:700;opacity:.92;letter-spacing:.04em}
+  .cover h2{margin:4px 0 0;font-size:24px;line-height:1.35}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chips span{font-size:12.5px;font-weight:600;background:rgba(255,255,255,.22);border-radius:99px;padding:3px 11px}
 
-  .item{background:var(--card);border-radius:16px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:5px solid var(--may);transition:opacity .3s}
-  .item.ok{border-left-color:var(--ok)}
-  .top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
-  .date{font-weight:800;font-variant-numeric:tabular-nums}
-  .name{font-weight:700;font-size:16px}
-  .st{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:99px;background:var(--mays);color:#b45309}
-  .ok .st{background:var(--oks);color:#047857}
-  .item ul{margin:8px 0 0;padding-left:1.2em;font-size:13.5px}
-  .item li{margin:2px 0}
-  .item li b{color:var(--ink)}
-  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-  .meta span{font-size:12px;background:var(--cs);color:#0369a1;border-radius:8px;padding:2px 8px}
-  ol.flow{list-style:none;margin:10px 0 4px;padding:0;border-left:2px solid var(--cs);font-size:13.5px}
-  ol.flow li{position:relative;margin:0 0 8px;padding-left:16px}
-  ol.flow li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--c)}
-  .tm{display:inline-block;min-width:46px;font-weight:800;color:#0369a1;font-variant-numeric:tabular-nums}
-  .sub{font-size:12.5px;color:var(--sub);margin:6px 0 0}
-  .why{display:block;font-size:12px;color:var(--sub)}
-  .item h3{font-size:14px;margin:14px 0 2px}
-  ul.bring{columns:2;column-gap:20px}
-  @media (max-width:420px){ul.bring{columns:1}}
-  .or{font-size:12.5px;color:var(--sub);margin:14px 2px 8px}
-  .note{font-size:12.5px;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:22px}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .body{padding:8px 22px 24px}
+  .sec{font-size:13px;font-weight:700;color:var(--sub);letter-spacing:.06em;margin:22px 0 12px}
+
+  
+  .tl{list-style:none;margin:0;padding:0;position:relative}
+  .tl::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:var(--line)}
+  .tl li{position:relative;display:flex;gap:14px;padding:0 0 18px}
+  .tl li:last-child{padding-bottom:0}
+  .ico{flex:none;position:relative;z-index:1;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:21px;background:var(--cs)}
+  .tl li.hl .ico{background:var(--leafs)}
+  .tm{font-size:12.5px;font-weight:800;color:#0369a1;font-variant-numeric:tabular-nums}
+  .tl li.hl .tm{color:var(--leaf)}
+  .tt{font-weight:700;font-size:15.5px;line-height:1.45}
+  .ds{font-size:13px;color:var(--sub);line-height:1.6;margin-top:2px}
+
+  
+  .bring{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+  .bring div{display:flex;align-items:center;gap:8px;background:#f7fafc;border-radius:12px;padding:9px 12px;font-size:13.5px}
+  .bring b{font-size:18px;font-weight:400}
+
+  
+  .tips{margin:0;padding:0;list-style:none}
+  .tips li{font-size:13.5px;padding:8px 12px;border-radius:12px;background:#fffbeb;margin-bottom:6px}
+
+  .foot{font-size:12px;color:var(--sub);text-align:center;margin-top:18px}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='fga' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbbf24'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23fga)'/%3E%3Cpath d='M16 5.5 4.8 15h3.4v10.5h15.6V15h3.4Z' fill='%23fff'/%3E%3Cpath d='M16 22.2c-.3-.3-3.6-2.6-3.6-4.8a1.9 1.9 0 0 1 3.6-.9 1.9 1.9 0 0 1 3.6.9c0 2.2-3.3 4.5-3.6 4.8Z' fill='%23fb7185'/%3E%3C/svg%3E">
 <style>
@@ -78,39 +84,46 @@
 <h1 class="pg">🚃 最近的出行</h1>
 <p class="lead">未来 1 个月 · 一家 3 口</p>
 
+<article class="day">
+  <div class="cover">
+    <div class="when">11/21（六）· 一天</div>
+    <h2>旧古河庭園 → 飛鳥山公園</h2>
+    <div class="chips"><span>🚲 骑车</span><span>☀️ 晴 15℃ / 4℃</span><span>💴 约 300 円 ＋ 午饭</span></div>
+  </div>
 
-<div class="week"><h2>📅 11/21〜11/23</h2><small>11/23（一）是勤労感謝の日，放假</small></div>
+  <div class="body">
+    <div class="sec">🕘 一天的流程</div>
+    <ol class="tl">
+      <li><span class="ico">🚲</span><div><div class="tm">9:30</div><div class="tt">骑车去飛鳥山公園</div><div class="ds">约 15〜20 分钟 · 大人孩子都戴头盔</div></div></li>
+      <li><span class="ico">🅿️</span><div><div class="tm">9:50</div><div class="tt">车停在飛鳥山公園里</div><div class="ds">儿童游乐区附近有停放处 · 旧古河没有，所以从这里走过去</div></div></li>
+      <li><span class="ico">🚶</span><div><div class="tm">10:00</div><div class="tt">走去旧古河庭園</div><div class="ds">约 1.2 km，带孩子约 20 分钟</div></div></li>
+      <li class="hl"><span class="ico">🍁</span><div><div class="tm">10:20</div><div class="tt">旧古河庭園 · 约 1 小时</div><div class="ds">洋馆前看秋玫瑰 → 下台阶到日本庭园 → 心字池旁的ハゼ正红 → 大瀑布</div></div></li>
+      <li><span class="ico">🚶</span><div><div class="tm">11:20</div><div class="tt">走回飛鳥山</div><div class="ds">孩子走累了抱一段</div></div></li>
+      <li><span class="ico">🍱</span><div><div class="tm">11:45</div><div class="tt">在公园吃便当</div><div class="ds">可以带吃的进去 · 没带就去王子站的便利店买</div></div></li>
+      <li class="hl"><span class="ico">🚂</span><div><div class="tm">12:30</div><div class="tt">儿童游乐区</div><div class="ds">SL 和都電车厢可以上去 · 城堡滑梯・大象滑梯 · 免费小单轨「アスカルゴ」</div></div></li>
+      <li><span class="ico">🏠</span><div><div class="tm">14:00</div><div class="tt">骑车回家</div><div class="ds">孩子累了就早点走</div></div></li>
+    </ol>
 
-<div class="item">
-  <div class="top"><span class="date">11/21（六）</span><span class="name">🍁 旧古河庭園 → 飛鳥山公園</span><span class="st">🚲 骑车</span></div>
-  <p class="sub">天气预报：晴，最高 15℃ / 最低 4℃（11/16 发表，前一天再看一次）</p>
-  <ol class="flow">
-    <li><span class="tm">9:30</span>骑车出发去<b>飛鳥山公園</b>（约 15〜20 分钟，推算）· 大人孩子都戴头盔</li>
-    <li><span class="tm">9:50</span><b>自行车停在飛鳥山公園里</b>（园内有自行车停放处，在儿童游乐区附近；园内不能骑车，推着走）<br><span class="why">旧古河庭園没有自行车停放处，最近的也要走 700 m 以上，所以车停在飛鳥山，走过去</span></li>
-    <li><span class="tm">10:00</span>走去旧古河庭園（约 1.2 km，带孩子约 20 分钟，推算）</li>
-    <li><span class="tm">10:20</span><b>旧古河庭園</b>：正门进 → 洋馆前看秋玫瑰（11/16 有 83 种在开）→ 走台阶下到日本庭园 → 心字池旁的ハゼ已经红了，正是最好看的时候（其他枫树・银杏才开始变色）→ 大瀑布 → 出园 · 约 1 小时</li>
-    <li><span class="tm">11:20</span>走回飛鳥山（约 20 分钟）· 孩子走累了可以抱一段</li>
-    <li><span class="tm">11:45</span><b>午饭：在飛鳥山吃带去的便当</b>（公园可以带吃的进去）· 不想带的话，王子站附近的便利店也能买</li>
-    <li><span class="tm">12:30</span>儿童游乐区：SL 和都電车厢（白天可以进车厢里坐）· 城堡滑梯・大象滑梯 · 免费小单轨「アスカルゴ」上下山（10:00〜16:00）· 园里的银杏也开始黄了</li>
-    <li><span class="tm">14:00</span>骑车回家（孩子累了就早点走）</li>
-  </ol>
-  <h3>🎒 带什么</h3>
-  <ul class="bring">
-    <li>头盔 × 3 · 车锁</li>
-    <li>便当・水・零食</li>
-    <li>湿巾・垃圾袋（公园垃圾自己带走）</li>
-    <li>孩子的厚外套（早上 4℃ 左右，骑车风大）</li>
-    <li>旧古河的门票钱（大人 150 円 × 2）</li>
-  </ul>
-  <h3>⚠ 注意</h3>
-  <ul>
-    <li>旧古河 <b>台阶和坡很多</b>，不能铺垫子野餐（吃饭放到飛鳥山）</li>
-    <li>洋馆里面要另外买票，开馆日也不一样，这次不进</li>
-  </ul>
-  <div class="meta"><span>旧古河 9:00〜17:00（最后入园 16:30）</span><span>大人 150 円 × 2，小学生以下免费</span><span>飛鳥山 免费</span><span>合计约 300 円 ＋ 午饭</span></div>
-</div>
+    <div class="sec">🎒 带什么</div>
+    <div class="bring">
+      <div><b>⛑️</b>头盔 × 3</div>
+      <div><b>🔒</b>车锁</div>
+      <div><b>🍱</b>便当・水・零食</div>
+      <div><b>🧥</b>孩子的厚外套</div>
+      <div><b>🧻</b>湿巾・垃圾袋</div>
+      <div><b>💴</b>门票 150 × 2</div>
+    </div>
 
-<p class="note">票价・开放时间是 11/17 查的，出门前再看一眼官网。</p>
+    <div class="sec">⚠️ 注意</div>
+    <ul class="tips">
+      <li>旧古河<b>台阶和坡多</b>，也不能铺垫子野餐</li>
+      <li>早上 4℃ 左右，骑车风大，穿暖一点</li>
+      <li>旧古河 9:00〜17:00（最后入园 16:30）· 洋馆另收费，这次不进</li>
+    </ul>
+  </div>
+</article>
+
+<p class="foot">票价・开放时间是 11/17 查的 · 前一天再看一次天气</p>
 
 </main>
 <script>
