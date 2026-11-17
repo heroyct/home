@@ -25,6 +25,9 @@
   .card .v{font-size:24px;font-weight:700;margin:2px 0 4px;font-variant-numeric:tabular-nums}
   .card .v small{font-size:14px;color:var(--sub);font-weight:600;margin-left:6px}
   .card .d{font-size:13.5px}
+  .rows{display:grid;gap:10px;margin-top:10px;font-size:14px}
+  .rows > div{display:flex;align-items:center;gap:10px}
+  .rows .tag{margin:0}
   .card.us{background:var(--uss);border-color:#f9c2db}
   .card.us .v{color:#be185d}
   .card.he{background:var(--hes);border-color:#c7c3f7}
@@ -99,12 +102,12 @@
       <div class="card he">
         <div class="k">👨 老公</div>
         <div class="v">22:00 过 → 7:00<small>约 8 小时 45 分</small></div>
-        <div class="d"><span class="tag">睡觉</span>比东京约 8 成的人早<br><span class="tag">起床</span>东京的正中间偏晚一点（6:30 前已起床的约 6 成）<br><span class="tag">睡眠</span>比东京的约 7 小时多 1 小时 45 分左右</div>
+        <div class="rows"><div><span class="tag">睡觉</span>比东京 8 成的人早</div><div><span class="tag">起床</span>东京的中间偏晚</div><div><span class="tag">睡眠</span>比东京（约 7 小时）多 1 小时 45 分</div></div>
       </div>
       <div class="card us">
         <div class="k">👩 老婆</div>
         <div class="v">23:00 → 8:00 过<small>约 9 小时</small></div>
-        <div class="d"><span class="tag">睡觉</span>比东京一半人早一点（中间偏早）<br><span class="tag">起床</span>比东京约 9 成的人晚<br><span class="tag">睡眠</span>东京按中位数推算约 7 小时，老婆多 2 小时左右</div>
+        <div class="rows"><div><span class="tag">睡觉</span>东京的中间偏早</div><div><span class="tag">起床</span>比东京 9 成的人晚</div><div><span class="tag">睡眠</span>比东京（约 7 小时）多 2 小时</div></div>
       </div>
     </div>
   </section>
