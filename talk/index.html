@@ -83,6 +83,14 @@ h1{font-size:26px;font-weight:700;margin:0 0 20px;line-height:1.35;text-align:le
 section{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.05);scroll-margin-top:84px}
 section h2{font-size:18px;font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 @media (max-width:900px){.layout{display:block;padding:18px 16px 70px}.sidenav{display:none}}
+.mtoc-btn{display:none}
+@media (max-width:900px){
+.mtoc-btn{display:flex;align-items:center;gap:6px;position:fixed;right:16px;bottom:20px;z-index:50;border:0;border-radius:999px;padding:11px 16px;background:var(--c);color:#fff;font-size:14px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer}
+.mtoc{position:fixed;right:16px;bottom:72px;z-index:50;width:min(300px,calc(100vw - 32px));max-height:65vh;overflow-y:auto;background:#fff;border-radius:14px;border-top:4px solid var(--c);padding:12px 8px;box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.mtoc[hidden]{display:none}
+.mtoc a{display:block;font-size:14px;line-height:1.45;color:var(--sub);text-decoration:none;padding:9px 10px;border-radius:9px}
+.mtoc a.on{background:var(--cs);color:var(--c);font-weight:700}
+}
 @media (max-width:720px){section{padding:16px 14px}}
 
 .steps4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
@@ -338,11 +346,21 @@ section h2{font-size:18px;font-weight:600;margin:0 0 14px;display:flex;align-ite
 </div>
 </div>
 </div>
+<button class="mtoc-btn" type="button" aria-expanded="false" aria-controls="mtoc">☰ 目录</button>
+<nav class="mtoc" id="mtoc" hidden></nav>
 <script>
-(function(){var ls=[].slice.call(document.querySelectorAll('.sidenav a[href^="#"]'));
+(function(){var btn=document.querySelector('.mtoc-btn'),box=document.getElementById('mtoc');
+[].slice.call(document.querySelectorAll('.sidenav a[href^="#"]')).forEach(function(a){box.appendChild(a.cloneNode(true))});
+function set(o){box.hidden=!o;btn.setAttribute('aria-expanded',o?'true':'false');btn.textContent=o?'✕ 关闭':'☰ 目录'}
+btn.addEventListener('click',function(e){e.stopPropagation();set(box.hidden)});
+box.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+document.addEventListener('click',function(e){if(!box.hidden&&!box.contains(e.target))set(false)});})();
+</script>
+<script>
+(function(){var ls=[].slice.call(document.querySelectorAll('.sidenav a[href^="#"], .mtoc a'));
 var ss=ls.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
 function f(){var y=window.scrollY+110,k=0;ss.forEach(function(e,i){if(e&&e.getBoundingClientRect().top+window.scrollY<=y)k=i});
-ls.forEach(function(a,i){a.classList.toggle('on',i===k)})}
+var h=ls[k].getAttribute('href');ls.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===h)})}
 window.addEventListener('scroll',f,{passive:true});f();})();
 </script>
 <script>
