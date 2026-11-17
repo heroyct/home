@@ -17,7 +17,6 @@
   main.wrap{max-width:720px;margin:0 auto;padding:22px 16px 0}
   h1.pg{font-size:26px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
   .lead{color:var(--sub);font-size:13.5px;margin:0 0 6px}
-  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;font-size:12.5px;color:var(--sub)}
 
   .week{margin:26px 0 10px;display:flex;align-items:baseline;gap:10px}
   .week h2{font-size:17px;margin:0}
@@ -25,7 +24,6 @@
 
   .item{background:var(--card);border-radius:16px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:5px solid var(--may);transition:opacity .3s}
   .item.ok{border-left-color:var(--ok)}
-  .item.past{opacity:.45}
   .top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
   .date{font-weight:800;font-variant-numeric:tabular-nums}
   .name{font-weight:700;font-size:16px}
@@ -40,6 +38,11 @@
   ol.flow li{position:relative;margin:0 0 8px;padding-left:16px}
   ol.flow li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--c)}
   .tm{display:inline-block;min-width:46px;font-weight:800;color:#0369a1;font-variant-numeric:tabular-nums}
+  .sub{font-size:12.5px;color:var(--sub);margin:6px 0 0}
+  .why{display:block;font-size:12px;color:var(--sub)}
+  .item h3{font-size:14px;margin:14px 0 2px}
+  ul.bring{columns:2;column-gap:20px}
+  @media (max-width:420px){ul.bring{columns:1}}
   .or{font-size:12.5px;color:var(--sub);margin:14px 2px 8px}
   .note{font-size:12.5px;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:22px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -73,30 +76,41 @@
 
 <nav class="fam-bc" style="--bc:#0ea5e9;--bcs:#e0f2fe"><a href="../">🏡 美好家园</a><span class="sep">›</span><a class="cur" href="#">🚃 出行</a></nav>
 <h1 class="pg">🚃 最近的出行</h1>
-<p class="lead">接下来 2〜3 周· 一家 3 口 · 坐电车</p>
-<div class="legend"><span class="st" style="background:var(--oks);color:#047857">✅ 定了</span><span class="st">计划中</span><span>过了日期的会自动变淡</span></div>
+<p class="lead">未来 1 个月 · 一家 3 口</p>
 
 
 <div class="week"><h2>📅 11/21〜11/23</h2><small>11/23（一）是勤労感謝の日，放假</small></div>
 
-<div class="item" data-d="2026-11-21">
-  <div class="top"><span class="date">11/21（六）</span><span class="name">🍁 旧古河庭園 → 飛鳥山公園</span><span class="st">计划中 · 🚲 骑车</span></div>
+<div class="item">
+  <div class="top"><span class="date">11/21（六）</span><span class="name">🍁 旧古河庭園 → 飛鳥山公園</span><span class="st">🚲 骑车</span></div>
+  <p class="sub">天气预报：晴，最高 15℃ / 最低 4℃（11/16 发表，前一天再看一次）</p>
   <ol class="flow">
-    <li><span class="tm">9:30</span>骑车出发（约 20 分钟，推算）· 大人孩子都戴头盔</li>
-    <li><span class="tm">10:00</span><b>旧古河庭園</b>：先在上面的洋馆前看秋玫瑰 → 走台阶下到日本庭园，看心字池旁的ハゼ（11/16 已经红了，正是最好看的时候；其他枫树・银杏才开始变色）→ 大瀑布 · 一圈约 1 小时</li>
-    <li><span class="tm">11:00</span>骑车去 <b>飛鳥山公園</b>（约 1.5 km，5〜10 分钟，推算）</li>
-    <li><span class="tm">11:15</span>坐免费的小单轨「アスカルゴ」上山（10:00〜16:00）→ 儿童游乐区：SL 和都電车厢可以爬上去玩，城堡滑梯・大象滑梯 · 银杏也开始黄了</li>
-    <li><span class="tm">12:00</span>午饭：<b>带便当在公园吃最省事</b>（可以带吃的进去），或者去王子站附近吃</li>
-    <li><span class="tm">13:00</span>再玩一会儿，孩子累了就骑车回家（14:00 前后到家）</li>
+    <li><span class="tm">9:30</span>骑车出发去<b>飛鳥山公園</b>（约 15〜20 分钟，推算）· 大人孩子都戴头盔</li>
+    <li><span class="tm">9:50</span><b>自行车停在飛鳥山公園里</b>（园内有自行车停放处，在儿童游乐区附近；园内不能骑车，推着走）<br><span class="why">旧古河庭園没有自行车停放处，最近的也要走 700 m 以上，所以车停在飛鳥山，走过去</span></li>
+    <li><span class="tm">10:00</span>走去旧古河庭園（约 1.2 km，带孩子约 20 分钟，推算）</li>
+    <li><span class="tm">10:20</span><b>旧古河庭園</b>：正门进 → 洋馆前看秋玫瑰（11/16 有 83 种在开）→ 走台阶下到日本庭园 → 心字池旁的ハゼ已经红了，正是最好看的时候（其他枫树・银杏才开始变色）→ 大瀑布 → 出园 · 约 1 小时</li>
+    <li><span class="tm">11:20</span>走回飛鳥山（约 20 分钟）· 孩子走累了可以抱一段</li>
+    <li><span class="tm">11:45</span><b>午饭：在飛鳥山吃带去的便当</b>（公园可以带吃的进去）· 不想带的话，王子站附近的便利店也能买</li>
+    <li><span class="tm">12:30</span>儿童游乐区：SL 和都電车厢（白天可以进车厢里坐）· 城堡滑梯・大象滑梯 · 免费小单轨「アスカルゴ」上下山（10:00〜16:00）· 园里的银杏也开始黄了</li>
+    <li><span class="tm">14:00</span>骑车回家（孩子累了就早点走）</li>
   </ol>
-  <ul>
-    <li>旧古河 <b>台阶和坡很多</b> · 不能铺垫子野餐，吃饭放到飛鳥山</li>
-    <li>⚠ <b>两边的自行车停车处都没查到</b>：到了先问旧古河门口的工作人员，不行就停西ケ原站附近的收费駐輪場</li>
+  <h3>🎒 带什么</h3>
+  <ul class="bring">
+    <li>头盔 × 3 · 车锁</li>
+    <li>便当・水・零食</li>
+    <li>湿巾・垃圾袋（公园垃圾自己带走）</li>
+    <li>孩子的厚外套（早上 4℃ 左右，骑车风大）</li>
+    <li>旧古河的门票钱（大人 150 円 × 2）</li>
   </ul>
-  <div class="meta"><span>旧古河 9:00〜17:00（最后入园 16:30）</span><span>大人 150 円 × 2，小学生以下免费</span><span>飛鳥山 免费</span></div>
+  <h3>⚠ 注意</h3>
+  <ul>
+    <li>旧古河 <b>台阶和坡很多</b>，不能铺垫子野餐（吃饭放到飛鳥山）</li>
+    <li>洋馆里面要另外买票，开馆日也不一样，这次不进</li>
+  </ul>
+  <div class="meta"><span>旧古河 9:00〜17:00（最后入园 16:30）</span><span>大人 150 円 × 2，小学生以下免费</span><span>飛鳥山 免费</span><span>合计约 300 円 ＋ 午饭</span></div>
 </div>
 
-<div class="item ok" data-d="2026-11-22">
+<div class="item ok">
   <div class="top"><span class="date">11/22（日）15:00</span><span class="name">🎹 北とぴあ 管风琴演奏会</span><span class="st">✅ 定了</span></div>
   <ul>
     <li>1 楼大厅，约 40 分钟 · 曲目：门德尔松《主题与变奏》等</li>
@@ -108,16 +122,6 @@
 <p class="note">票价・开放时间是 11/17 查的，出门前再看一眼官网。</p>
 
 </main>
-<script>
-// 过了日期的计划变淡（按每项的 data-d，当天还算没过）
-(function(){
-  var t=new Date();t.setHours(0,0,0,0);
-  [].forEach.call(document.querySelectorAll('.item[data-d]'),function(el){
-    var p=el.getAttribute('data-d').split('-');
-    if(new Date(+p[0],p[1]-1,+p[2])<t) el.classList.add('past');
-  });
-})();
-</script>
 <script>
 // 本地（file://）打开时，文件夹链接不会自动找 index.html，补上。GitHub Pages 上不变
 if(location.protocol==='file:'){[].forEach.call(document.querySelectorAll('a[href$="/"]'),function(a){a.setAttribute('href',a.getAttribute('href')+'index.html')})}
