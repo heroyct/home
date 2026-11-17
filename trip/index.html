@@ -43,15 +43,23 @@
   .ds{font-size:13px;color:var(--sub);line-height:1.6;margin-top:2px}
 
   
-  .bar{display:flex;gap:3px;height:34px;border-radius:12px;overflow:hidden}
-  .bar i{font-style:normal;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;min-width:0}
+  .gantt{margin:0 0 22px}
+  .g-row{display:flex;align-items:center;gap:10px;min-height:38px}
+  .g-lb{flex:none;width:44%;max-width:210px;display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;white-space:nowrap}
+  .g-lb em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--sub);margin-left:auto}
+  .g-ic{font-size:18px;width:22px;text-align:center}
+  .g-tr{position:relative;flex:1;height:22px;background:#f1f5f9;border-radius:8px}
+  .g-tr i{position:absolute;top:0;bottom:0;border-radius:8px;min-width:6px}
+  .g-head{min-height:22px}.g-head .g-tr{background:none;height:18px}
+  .g-head span{position:absolute;top:0;font-size:11.5px;color:var(--sub);font-variant-numeric:tabular-nums}
   .ride{background:#38bdf8}.walk{background:#a3b8cc}.leaf{background:#ea580c}.eat{background:#f59e0b}.play{background:#10b981}
-  .ticks{position:relative;height:18px;font-size:11.5px;color:var(--sub);margin:4px 2px 0;font-variant-numeric:tabular-nums}
-  .ticks span{position:absolute;top:0}  
-  .legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--sub);margin:8px 0 18px}
-  .legend b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
   .dur{display:inline-block;margin-left:8px;font-size:11.5px;font-weight:700;color:#0369a1;background:var(--cs);border-radius:99px;padding:0 8px;line-height:1.7}
   .tl li.hl .dur{color:var(--leaf);background:var(--leafs)}
+  @media (max-width:520px){
+    .body{padding:6px 16px 22px}.cover{padding:22px 18px 20px}
+    .tt{font-size:16.5px}.ds{font-size:14px}.tm{font-size:13.5px}.dur{font-size:12.5px}
+    .bring div,.tips li{font-size:14.5px}
+  }
   
   .bring{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
   .bring div{display:flex;align-items:center;gap:8px;background:#f7fafc;border-radius:12px;padding:9px 12px;font-size:13.5px}
@@ -102,11 +110,16 @@
 
   <div class="body">
     <div class="sec">🕘 一天的流程</div>
-    <div class="bar" aria-hidden="true">
-      <i class="ride" style="flex:30">🚲</i><i class="walk" style="flex:20">🚶</i><i class="leaf" style="flex:60">🍁 1h</i><i class="walk" style="flex:25">🚶</i><i class="eat" style="flex:45">🍱</i><i class="play" style="flex:90">🚂 1.5h</i><i class="ride" style="flex:20">🏠</i>
+    <div class="gantt" aria-hidden="true">
+      <div class="g-row g-head"><div class="g-lb"></div><div class="g-tr"><span style="left:0">9:30</span><span style="left:31%">11:00</span><span style="left:62%">12:30</span><span style="right:0">14:20</span></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🚲</span>骑车・停车<em>30 分</em></div><div class="g-tr"><i class="ride" style="left:0.0%;width:10.3%"></i></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🚶</span>走去旧古河<em>20 分</em></div><div class="g-tr"><i class="walk" style="left:10.3%;width:6.9%"></i></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🍁</span>看红叶<em>1 小时</em></div><div class="g-tr"><i class="leaf" style="left:17.2%;width:20.7%"></i></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🚶</span>走回飛鳥山<em>25 分</em></div><div class="g-tr"><i class="walk" style="left:37.9%;width:8.6%"></i></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🍱</span>午饭<em>45 分</em></div><div class="g-tr"><i class="eat" style="left:46.6%;width:15.5%"></i></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🚂</span>玩<em>1.5 小时</em></div><div class="g-tr"><i class="play" style="left:62.1%;width:31.0%"></i></div></div>
+      <div class="g-row"><div class="g-lb"><span class="g-ic">🏠</span>骑车回家<em>20 分</em></div><div class="g-tr"><i class="ride" style="left:93.1%;width:6.9%"></i></div></div>
     </div>
-    <div class="ticks"><span style="left:0">9:30</span><span style="left:31%">11:00</span><span style="left:62%">12:30</span><span style="right:0">14:20</span></div>
-    <div class="legend"><span><b class="ride"></b>骑车・停车</span><span><b class="walk"></b>走路</span><span><b class="leaf"></b>看红叶</span><span><b class="eat"></b>午饭</span><span><b class="play"></b>玩</span></div>
     <ol class="tl">
       <li><span class="ico">🚲</span><div><div class="tm">9:30 – 9:50<span class="dur">20 分</span></div><div class="tt">骑车去飛鳥山公園</div><div class="ds">大人孩子都戴头盔</div></div></li>
       <li><span class="ico">🅿️</span><div><div class="tm">9:50 – 10:00<span class="dur">10 分</span></div><div class="tt">车停在飛鳥山公園里</div><div class="ds">儿童游乐区附近有停放处 · 旧古河没有，所以从这里走过去</div></div></li>
